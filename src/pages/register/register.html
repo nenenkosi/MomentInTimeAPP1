@@ -14,21 +14,43 @@
 
 
 <ion-content padding>
+  <div class="main" >
+    <ion-list class="input-list" >
+        <ion-item class="ion-item" >
+            <ion-label fixed>username</ion-label>
+            <ion-input type="userame" value="" [(ngModel)]="user.username"></ion-input>
+          </ion-item>
 
-    <ion-list>
-
-        <ion-item>
+        <ion-item  class="ion-item">
           <ion-label fixed>Email</ion-label>
           <ion-input type="email" value="" [(ngModel)]="user.email"></ion-input>
         </ion-item>
       
-        <ion-item>
+        <ion-item  class="ion-item" >   
           <ion-label fixed>Password</ion-label>
-          <ion-input type="password"  [(ngModel)]="user.email"></ion-input>
+          <ion-input type="password"  [(ngModel)]="user.password"></ion-input>
         </ion-item>
+        <div class="button" >
+            <button  ion-button (click)="Register()">Register</button>
+        </div>
+        <div class="sigin">
+            <ion-grid>
+                <ion-row>
+                  <ion-col ></ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col ></ion-col>
+                </ion-row>
+              </ion-grid>
+
+        </div>
 
         <button  ion-button (click)="Register(user)">Register</button>
+
       
       </ion-list>
+  </div>
+
+    
 
 </ion-content>
