@@ -25678,6 +25678,12 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-register ion-content {
+  background: url("../../assets/imgs/c46ed047fdc2de86e92c7617af994158.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#b82375), to(#1c1e33));
+  background-image: linear-gradient(#b82375, #1c1e33);
+}
+
 page-register .button {
   width: 100%;
 }
@@ -25693,19 +25699,55 @@ page-register .sigin-with {
   left: 10%;
   font-size: 20px;
   font-weight: bold;
+  color: white;
 }
 
 page-register .main {
   position: relative;
-  top: 30%;
   height: auto;
 }
 
 page-register .heading {
   position: relative;
-  top: 20%;
+  top: -35px;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   font-family: serif;
   font-display: normal;
+  color: white;
+}
+
+page-register .sigin {
+  position: relative;
+  top: -80px;
+  left: 85%;
+  font-weight: bold;
+  font-size: 20px;
+  padding-right: 30px;
+  color: white;
+}
+
+page-register .logo {
+  position: relative;
+  top: -20px;
+}
+
+page-register .input-list {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+page-register .ion-item {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+page-register .text-input::-moz-placeholder {
+  color: white;
+}
+
+page-register .text-input:-ms-input-placeholder {
+  color: white;
+}
+
+page-register .text-input::-webkit-input-placeholder {
+  color: white;
 }
