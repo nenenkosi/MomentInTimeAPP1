@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {user} from '../model/user'
 import {DatabaseProvider} from '../../providers/database/database' ;
 import { RegisterPage } from '../register/register';
-
+import { AlertController } from 'ionic-angular';
 /**
  * Generated class for the LoginPage page.
  *
@@ -20,7 +20,7 @@ export class LoginPage {
 
   user = {} as user ;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , private db:DatabaseProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams , private db:DatabaseProvider ,public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -28,11 +28,28 @@ export class LoginPage {
   }
 
   Login(user:user){
-    this.db.login(user.email ,user.password).then(()=>{
-      alert("sucess")
-    } ,(error)=>{
 
-    })
+    if(user.email !=undefined && user.password !=undefined){
+      this.db.login(user.email ,user.password).then(()=>{
+       
+      } ,(error)=>{
+        const alert = this.alertCtrl.create({
+          title: 'CONFIRMATION',
+          subTitle:  error,
+          buttons: ['OK']
+        });
+        alert.present();
+  
+      })
+    }else{
+      const alert = this.alertCtrl.create({
+        title: 'Confirmarion',
+        subTitle: 'Please all details',
+        buttons: ['OK']
+      });
+      alert.present();
+    }
+   
 
 
   }
