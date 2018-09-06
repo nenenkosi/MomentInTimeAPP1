@@ -1,19 +1,22 @@
 <ion-content padding class="ion-content" >
+  <div  class="heading" >
+    Create new account
+  </div>
 
-  <div class="main" >
+  <div class="main" > 
     <ion-list class="input-list" >
         <ion-item class="ion-item" >
-            <ion-label floating>username</ion-label>
+            <ion-label floating>USERNAME</ion-label>
             <ion-input type="userame" value="" [(ngModel)]="user.username"></ion-input>
           </ion-item>
 
         <ion-item  class="ion-item">
-          <ion-label floating>Email</ion-label>
+          <ion-label floating>EMAIL</ion-label>
           <ion-input type="email" value="" [(ngModel)]="user.email"></ion-input>
         </ion-item>
       
         <ion-item  class="ion-item" >   
-          <ion-label floating>Password</ion-label>
+          <ion-label floating>PASSWORD</ion-label>
           <ion-input type="password"  [(ngModel)]="user.password"></ion-input>
         </ion-item>
       </ion-list>

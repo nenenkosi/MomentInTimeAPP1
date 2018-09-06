@@ -25694,3 +25694,18 @@ page-register .sigin-with {
   font-size: 20px;
   font-weight: bold;
 }
+
+page-register .main {
+  position: relative;
+  top: 30%;
+  height: auto;
+}
+
+page-register .heading {
+  position: relative;
+  top: 20%;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: serif;
+  font-display: normal;
+}
