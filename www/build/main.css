@@ -25681,3 +25681,31 @@ ion-navbar.toolbar {
 page-register .button {
   width: 100%;
 }
+
+page-register .grid {
+  position: relative;
+  left: 50%;
+}
+
+page-register .sigin-with {
+  position: relative;
+  top: 45px;
+  left: 10%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+page-register .main {
+  position: relative;
+  top: 30%;
+  height: auto;
+}
+
+page-register .heading {
+  position: relative;
+  top: 20%;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: serif;
+  font-display: normal;
+}

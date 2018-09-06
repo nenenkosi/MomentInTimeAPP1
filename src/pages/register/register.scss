@@ -1,7 +1,37 @@
 page-register {
+    .ion-content{
+        // background-color: black;
+    }
     .button{
         width: 100%;
        
     }
+    .grid{
+        position: relative;
+        left: 50%;
+    }
+    .sigin-with{
+        position: relative;
+        top: 45px;
+        left: 10%;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .main{
+        position: relative;
+        top: 30%;
+        height: auto;
 
+    }
+    .heading{
+        position: relative;
+        top: 20%;
+        font-weight: bold;
+        font-size: 25px;
+        font-family: serif;
+        font-display: normal;
+
+
+    }
 }
+    
