@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+declare var firebase ;
+
 /*
   Generated class for the DatabaseProvider provider.
 
@@ -14,6 +16,24 @@ export class DatabaseProvider {
     console.log('Hello DatabaseProvider Provider');
   }
 
+
+
+  register(email , password){ 
+    return new Promise((resolve, reject)=>{
+      firebase.auth().createUserWithEmailAndPassword(email , password) ;
+      resolve();
+
+ })
+
+ }
+
+ login(email , password){
+  return new Promise((resolve, reject)=>{
+    firebase.auth().signInWithEmailAndPassword(email , password) ;
+    resolve();
+
+})
   
+ }
 
 }
