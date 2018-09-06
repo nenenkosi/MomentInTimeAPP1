@@ -1,0 +1,7 @@
+{
+  "name": "momentsInTime",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
