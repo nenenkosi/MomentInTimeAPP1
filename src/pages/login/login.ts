@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {user} from '../model/user'
 import {DatabaseProvider} from '../../providers/database/database' ;
+import { RegisterPage } from '../register/register';
 
 /**
  * Generated class for the LoginPage page.
@@ -42,6 +43,10 @@ export class LoginPage {
     } , (error)=>{
 
     })
+  }
+// remove after am done  its for navigation to register
+  de(){
+    this.navCtrl.push(RegisterPage)
   }
 
 }
