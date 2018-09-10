@@ -4,6 +4,8 @@ import {user} from '../model/user'
 import {DatabaseProvider} from '../../providers/database/database' ;
 import { RegisterPage } from '../register/register';
 import { AlertController } from 'ionic-angular';
+
+declare var firebase
 /**
  * Generated class for the LoginPage page.
  *
@@ -29,8 +31,13 @@ export class LoginPage {
 
   Login(user:user){
 
+    var users = firebase.auth().currentUser.uid;
+
     if(user.email !=undefined && user.password !=undefined){
       this.db.login(user.email ,user.password).then(()=>{
+        
+        firebase.database().ref("user/" +users).set({
+        })
        
       } ,(error)=>{
         const alert = this.alertCtrl.create({

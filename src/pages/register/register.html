@@ -17,7 +17,7 @@
   <ion-list class="input-list" >
       <ion-item class="ion-item" >
           <ion-label floating>USERNAME</ion-label>
-          <ion-input type="userame" value="" [(ngModel)]="user.username"></ion-input>
+          <ion-input type="userame" value="" [(ngModel)]="user.name"></ion-input>
         </ion-item>
 
       <ion-item  class="ion-item">
@@ -31,7 +31,7 @@
       </ion-item>
     </ion-list>
       <div class="button" >
-          <button  ion-button round  (click)="Register()" full>Register</button>
+          <button  ion-button round  (click)="Register(user)" full>Register</button>
 
       </div>
 
@@ -51,7 +51,7 @@
             <ion-col col-2>
 
               <div>
-                  <div>
+                  <div (click)="google()">
                      <img src="../../assets/imgs/google-plus (4).png" alt="google icon">
 
                 </div>

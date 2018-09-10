@@ -12,22 +12,35 @@ declare var firebase ;
 @Injectable()
 export class DatabaseProvider {
 
+  provider = new firebase.auth.GoogleAuthProvider();
+
   constructor(public http: HttpClient) {
     console.log('Hello DatabaseProvider Provider');
   }
 
 
 
-  register(email , password){ 
+  register(email , password , name){
+    var users= firebase.auth().currentUser;
+
     return new Promise((resolve, reject)=>{
-      firebase.auth().createUserWithEmailAndPassword(email , password) ;
-      resolve();
-
+      firebase.auth().createUserWithEmailAndPassword(email , password) .then(()=>{
+        firebase.database().ref("user/"+ users.uid).set({
+          name:name
+        })
+        resolve();
+      } , (error)=>{
+        reject(error);
+      });
+ 
+ 
  })
-
+ 
  }
 
  login(email , password){
+
+  //firebase.auth().signInWithEmail()
   return new Promise((resolve, reject)=>{
     firebase.auth().signInWithEmailAndPassword(email , password).then(()=>{
       resolve();
@@ -43,10 +56,34 @@ export class DatabaseProvider {
 
 forgetPassword(email){
   return new Promise((resolve, reject)=>{
-    firebase.auth().sendPasswordResetEmail(email ) ;
+    firebase.auth().sendPasswordResetEmail(email) ;
     resolve();
 
 })
+
+}
+
+SignWithGoogle(){
+  this.provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+
+   return firebase.auth().signInWithPopup(this.provider).then(function(result) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    
+  }).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+
+  
 
 }
 
