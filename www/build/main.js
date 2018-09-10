@@ -4,10 +4,11 @@ webpackJsonp([2],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_database_database__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(101);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -21,15 +22,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 39c10d5fe577e4b307d634835209175dab9ef61b
 /**
- * Generated class for the RegisterPage page.
+ * Generated class for the LoginPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+<<<<<<< HEAD
 var RegisterPage = /** @class */ (function () {
     function RegisterPage(navCtrl, navParams, db, toastCtrl, alertCtrl) {
+=======
+var LoginPage = /** @class */ (function () {
+    function LoginPage(navCtrl, navParams, db) {
+>>>>>>> 39c10d5fe577e4b307d634835209175dab9ef61b
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.db = db;
@@ -37,9 +46,10 @@ var RegisterPage = /** @class */ (function () {
         this.alertCtrl = alertCtrl;
         this.user = {};
     }
-    RegisterPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad RegisterPage');
+    LoginPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LoginPage');
     };
+<<<<<<< HEAD
     RegisterPage.prototype.Register = function (user) {
         var _this = this;
         console.log(user.name);
@@ -71,18 +81,43 @@ var RegisterPage = /** @class */ (function () {
     };
     RegisterPage.prototype.google = function () {
         this.db.SignWithGoogle();
+=======
+    LoginPage.prototype.Login = function (user) {
+        this.db.login(user.email, user.password).then(function () {
+            alert("sucess");
+        }, function (error) {
+        });
+>>>>>>> 39c10d5fe577e4b307d634835209175dab9ef61b
     };
-    RegisterPage = __decorate([
+    LoginPage.prototype.forgetPassword = function (user) {
+        this.db.forgetPassword(user.email).then(function () {
+            alert("success");
+        }, function (error) {
+        });
+    };
+    // remove after am done  its for navigation to register
+    LoginPage.prototype.de = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__register_register__["a" /* RegisterPage */]);
+    };
+    LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-register',template:/*ion-inline-start:"C:\Users\Kgaot\Desktop\GroupProject\momentsInTime\src\pages\register\register.html"*/'<ion-content padding class="ion-content" >\n\n  <div  class="heading" >\n\n    Create new account\n\n  </div>\n\n\n\n  <div class="main" >\n\n    <div class="logo" >\n\n        <img src="../../assets/imgs/christmas-star (1).png" alt="moments in time logo" width="80" >\n\n\n\n      </div>\n\n      <div class="sigin " >\n\n       <u>Singin</u>\n\n      </div>\n\n      <div  class="heading" >\n\n        Create new account\n\n      </div>\n\n  <ion-list class="input-list" >\n\n      <ion-item class="ion-item" >\n\n          <ion-label floating>USERNAME</ion-label>\n\n          <ion-input type="userame" value="" [(ngModel)]="user.name"></ion-input>\n\n        </ion-item>\n\n\n\n      <ion-item  class="ion-item">\n\n        <ion-label floating>EMAIL</ion-label>\n\n        <ion-input type="email" value="" [(ngModel)]="user.email"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item  class="ion-item" >\n\n        <ion-label floating>PASSWORD</ion-label>\n\n        <ion-input type="password"  [(ngModel)]="user.password"></ion-input>\n\n      </ion-item>\n\n    </ion-list>\n\n      <div class="button" >\n\n          <button  ion-button round  (click)="Register(user)" full>Register</button>\n\n\n\n      </div>\n\n\n\n      <div class="signin-icons">\n\n\n\n         <div class="sigin-with" >or sigin with:</div>\n\n          <ion-grid class="grid" >\n\n          <ion-row >\n\n            <ion-col col-2>\n\n              <div>\n\n                  <div>\n\n                      <img src="../../assets/imgs/facebook (1).png" alt="facebook icon">\n\n                </div>\n\n              </div>\n\n            </ion-col>\n\n\n\n            <ion-col col-2>\n\n\n\n              <div>\n\n                  <div (click)="google()">\n\n                     <img src="../../assets/imgs/google-plus (4).png" alt="google icon">\n\n\n\n                </div>\n\n              </div>\n\n            </ion-col>\n\n            <ion-col col-2>\n\n\n\n                <div>\n\n                    <div>\n\n                        <img src="../../assets/imgs/twitter.png" alt="twitter icon">\n\n\n\n                  </div>\n\n                </div>\n\n              </ion-col>\n\n          </ion-row>\n\n          </ion-grid>\n\n\n\n</div>\n\n</div>\n\n\n\n    \n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Kgaot\Desktop\GroupProject\momentsInTime\src\pages\register\register.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
     ], RegisterPage);
     return RegisterPage;
     var _a, _b, _c, _d, _e;
+=======
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\mqike\Pictures\MomentInTimeAPP1\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Login</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-list>\n\n\n\n        <ion-item>\n\n          <ion-label fixed>Email</ion-label>\n\n          <ion-input type="email" value="" [(ngModel)]="user.email"></ion-input>\n\n        </ion-item>\n\n      \n\n        <ion-item>\n\n          <ion-label fixed>Password</ion-label>\n\n          <ion-input type="password"  [(ngModel)]="user.password"></ion-input>\n\n        </ion-item>\n\n\n\n        <button  ion-button (click)="Login(user)">Login</button> <br>\n\n\n\n        <a (click)="forgetPassword(user)">FORGET PASSSWORD</a>\n\n      \n\n      </ion-list>\n\n      <button (click)="de()" >register</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\mqike\Pictures\MomentInTimeAPP1\src\pages\login\login.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */]])
+    ], LoginPage);
+    return LoginPage;
+>>>>>>> 39c10d5fe577e4b307d634835209175dab9ef61b
 }());
 
-//# sourceMappingURL=register.js.map
+//# sourceMappingURL=login.js.map
 
 /***/ }),
 
@@ -90,11 +125,10 @@ var RegisterPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_database_database__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -107,25 +141,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 39c10d5fe577e4b307d634835209175dab9ef61b
 /**
- * Generated class for the LoginPage page.
+ * Generated class for the RegisterPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
+<<<<<<< HEAD
 var LoginPage = /** @class */ (function () {
     function LoginPage(navCtrl, navParams, db, alertCtrl) {
+=======
+var RegisterPage = /** @class */ (function () {
+    function RegisterPage(navCtrl, navParams, db) {
+>>>>>>> 39c10d5fe577e4b307d634835209175dab9ef61b
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.db = db;
         this.alertCtrl = alertCtrl;
         this.user = {};
     }
-    LoginPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LoginPage');
+    RegisterPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad RegisterPage');
     };
+<<<<<<< HEAD
     LoginPage.prototype.Login = function (user) {
         var _this = this;
         var users = firebase.auth().currentUser.uid;
@@ -149,28 +192,33 @@ var LoginPage = /** @class */ (function () {
             });
             alert.present();
         }
-    };
-    LoginPage.prototype.forgetPassword = function (user) {
-        this.db.forgetPassword(user.email).then(function () {
-            alert("success");
+=======
+    RegisterPage.prototype.Register = function (user) {
+        this.db.register(user.email, user.password).then(function () {
+            alert("sucess");
         }, function (error) {
         });
+>>>>>>> 39c10d5fe577e4b307d634835209175dab9ef61b
     };
-    // remove after am done  its for navigation to register
-    LoginPage.prototype.de = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__register_register__["a" /* RegisterPage */]);
-    };
-    LoginPage = __decorate([
+    RegisterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-login',template:/*ion-inline-start:"C:\Users\Kgaot\Desktop\GroupProject\momentsInTime\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Login</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-list>\n\n\n\n        <ion-item>\n\n          <ion-label fixed>Email</ion-label>\n\n          <ion-input type="email" value="" [(ngModel)]="user.email"></ion-input>\n\n        </ion-item>\n\n      \n\n        <ion-item>\n\n          <ion-label fixed>Password</ion-label>\n\n          <ion-input type="password"  [(ngModel)]="user.password"></ion-input>\n\n        </ion-item>\n\n\n\n        <button  ion-button (click)="Login(user)">Login</button> <br>\n\n\n\n        <a (click)="forgetPassword(user)">FORGET PASSSWORD</a>\n\n      \n\n      </ion-list>\n\n      <button (click)="de()" >register</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Kgaot\Desktop\GroupProject\momentsInTime\src\pages\login\login.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
     ], LoginPage);
     return LoginPage;
     var _a, _b, _c, _d;
+=======
+            selector: 'page-register',template:/*ion-inline-start:"C:\Users\mqike\Pictures\MomentInTimeAPP1\src\pages\register\register.html"*/'<ion-content padding class="ion-content" >\n\n\n\n\n\n  <div class="main" > \n\n    <!-- app logo -->\n\n      <div class="logo" >\n\n          <img src="../../assets/icon/favicon.ico" alt="moments in time logo" width="80" >\n\n        </div>\n\n         <!-- end of app logo -->\n\n\n\n        <!-- start inputs section -->\n\n        <div class="inputs">\n\n            <ion-item class="ion-item" >\n\n              <ion-label fixed ><ion-icon ios="ios-contact" md="md-contact"></ion-icon>Username</ion-label>\n\n              <ion-input type="userame" value="" placeholder=" "[(ngModel)]="user.username" placeholder="" ></ion-input>\n\n            </ion-item>\n\n            \n\n            <ion-item  class="ion-item">\n\n              <ion-label fixed ><ion-icon name="mail"></ion-icon>Email</ion-label>\n\n              <ion-input type="email" value="" placeholder="" [(ngModel)]="user.email"></ion-input>\n\n            </ion-item>\n\n            \n\n            <ion-item  class="ion-item" >\n\n              <ion-label fixed ><ion-icon name="lock"></ion-icon>Password</ion-label>\n\n              <ion-input type="password" placeholder=""  [(ngModel)]="user.password"></ion-input>\n\n            </ion-item>\n\n\n\n          \n\n          <div class="button" >\n\n            <button  ion-button round color="blue" (click)="Register()" full>Register</button>\n\n          </div>\n\n             </div>\n\n               <!-- close inputs section  -->\n\n\n\n               <!-- start signin section -->\n\n             \n\n             <div class="signin" >\n\n               <!-- signin with section -->\n\n               <div class="sign-with"  (click)="Login()">\n\n                 <p  >Sigin with:</p>\n\n                </div>\n\n                <!-- close sigin with section -->\n\n             </div>\n\n            <!-- close signin section  -->\n\n            <!-- start  sigin with icons section -->\n\n\n\n            <div class="signin-icons">\n\n              <ion-grid>\n\n                <ion-row>\n\n                  <ion-col col-2 >\n\n                    <div class="facebook-logo" >\n\n                <img class="img" src="../../assets/imgs/facebook (2).svg" alt="facebook icon">\n\n              </div>\n\n                  </ion-col>\n\n                  <ion-col col-2 >\n\n                    <div class="google-logo" >\n\n                <img  class="img" src="../../assets/imgs/google-plus.svg" alt="google icon">\n\n              </div> \n\n                  </ion-col>\n\n                  <ion-col col-2 >\n\n                    <div>\n\n                <img class="twitter-logo" src="../../assets/imgs/twitter.svg" alt="twitter icon">\n\n              </div>\n\n                  </ion-col>\n\n                </ion-row>\n\n              </ion-grid>\n\n              \n\n              \n\n              \n\n            </div>\n\n            <!-- close sigin icons section -->\n\n            \n\n          </div>\n\n          <!-- close main section -->\n\n          \n\n\n\n    \n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\mqike\Pictures\MomentInTimeAPP1\src\pages\register\register.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */]])
+    ], RegisterPage);
+    return RegisterPage;
+>>>>>>> 39c10d5fe577e4b307d634835209175dab9ef61b
 }());
 
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=register.js.map
 
 /***/ }),
 
@@ -196,11 +244,11 @@ webpackEmptyAsyncContext.id = 113;
 
 var map = {
 	"../pages/login/login.module": [
-		281,
+		280,
 		1
 	],
 	"../pages/register/register.module": [
-		280,
+		281,
 		0
 	]
 };
@@ -355,8 +403,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_database_database__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_register_register__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_register_register__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_common_http__ = __webpack_require__(156);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -394,8 +442,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */], __WEBPACK_IMPORTED_MODULE_13__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
@@ -430,7 +478,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(100);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
