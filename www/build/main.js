@@ -579,12 +579,24 @@ var DatabaseProvider = /** @class */ (function () {
         });
     };
     DatabaseProvider.prototype.SignWithGoogle = function () {
+        var users = firebase.auth().currentUser;
         this.provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
         return firebase.auth().signInWithPopup(this.provider).then(function (result) {
             // This gives you a Google Access Token. You can use it to access the Google API.
             var token = result.credential.accessToken;
             // The signed-in user info.
             var user = result.user;
+            var res = result.user.displayName.split(" ");
+            console.log(user);
+            firebase.database().ref("user/" + users.uid).set({
+                email: user.email,
+                username: user.displayName,
+                name: {
+                    first: res[0],
+                    middle: res[1],
+                    last: res[2]
+                }
+            });
         }).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
