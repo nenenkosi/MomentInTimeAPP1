@@ -25679,75 +25679,80 @@ ion-navbar.toolbar {
 }
 
 page-register ion-content {
-  background: url("../../assets/imgs/c46ed047fdc2de86e92c7617af994158.jpg");
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#b82375), to(#1c1e33));
-  background-image: linear-gradient(#b82375, #1c1e33);
+  background: url("../../assets/imgs/first sprint1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 page-register .button {
   width: 100%;
+  position: relative;
+  top: 5px;
 }
 
-page-register .grid {
+page-register .signin-icons {
   position: relative;
-  left: 50%;
+  bottom: 132px;
 }
 
-page-register .sigin-with {
+page-register .sign-with {
   position: relative;
-  top: 45px;
-  left: 10%;
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
+  top: 100px;
+  text-align: center;
 }
 
-page-register .main {
-  position: relative;
+page-register .signin {
   height: auto;
+  position: relative;
 }
 
-page-register .heading {
-  position: relative;
-  top: -35px;
+page-register p {
   font-weight: bold;
-  font-size: 20px;
-  font-family: serif;
-  font-display: normal;
-  color: white;
 }
 
-page-register .sigin {
+page-register .facebook-logo {
   position: relative;
-  top: -80px;
-  left: 85%;
-  font-weight: bold;
-  font-size: 20px;
-  padding-right: 30px;
-  color: white;
+  top: 200px;
+  left: 55%;
+}
+
+page-register .google-logo {
+  position: relative;
+  text-align: center;
+  top: 143px;
+  left: -13%;
+}
+
+page-register .twitter-logo {
+  position: relative;
+  text-align: right;
+  top: 110px;
 }
 
 page-register .logo {
   position: relative;
-  top: -20px;
+  text-align: center;
+  top: 50px;
 }
 
-page-register .input-list {
-  background-color: rgba(255, 255, 255, 0);
+page-register .main {
+  height: auto;
 }
 
-page-register .ion-item {
-  background-color: rgba(255, 255, 255, 0);
+page-register .inputs {
+  position: relative;
+  top: 100px;
+  height: auto;
 }
 
-page-register .text-input::-moz-placeholder {
+page-register .Forget-password {
+  position: relative;
+  bottom: -200px;
+  text-align: right;
   color: white;
 }
 
-page-register .text-input:-ms-input-placeholder {
-  color: white;
-}
-
-page-register .text-input::-webkit-input-placeholder {
-  color: white;
+page-register img {
+  width: 64px;
 }

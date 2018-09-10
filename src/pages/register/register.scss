@@ -1,75 +1,82 @@
 page-register {
     ion-content{
-       background:url("../../assets/imgs/c46ed047fdc2de86e92c7617af994158.jpg");
-       background-image: linear-gradient(rgb(184, 35, 117), rgb(28, 30, 51));
+   
+       background:url("../../assets/imgs/first\ sprint1.png");
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center;
+    
 
     }
     .button{
         width: 100%;
-       
-    }
-    .grid{
         position: relative;
-        left: 50%;
+        top: 5px;
     }
-    .sigin-with{
+    .signin-icons{
         position: relative;
-        top: 45px;
-        left: 10%;
-        font-size: 20px;
-        font-weight: bold;
-        color: white;
+        bottom: 132px;
     }
-    .main{
+    .sign-with{
         position: relative;
+        top: 100px;
+        text-align: center;
+    }
+    .signin{
         height: auto;
+        position: relative;
 
     }
-    .heading{
-        position: relative;
-        top: -35px;
+    p{
         font-weight: bold;
-        font-size: 20px;
-        font-family: serif;
-        font-display: normal;
-        color: white;
-
-
     }
-    .sigin{
+    .facebook-logo{
         position: relative;
-        top: -80px;
-        left: 85%;
-        font-weight: bold;
-        font-size: 20px;
-        padding-right:30px;
-        color: white;
+        top: 200px;
+        left: 55%;
+      
+    }
+    .google-logo{
+        position: relative;
+        text-align: center;
+        top: 143px;
+        left: -13%;
+    
+        
+    }
+    .twitter-logo{
+        position: relative;
+        text-align: right;
+        top: 110px;
+
     }
     .logo{
         position: relative;
-        top: -20px;
+        text-align: center;
+        top: 50px;
     }
-    .input-list{
-        background-color: rgba(255, 255, 255, 0);
+    .main{
+        height: auto;
     }
-    .ion-item{
-        background-color: rgba(255, 255, 255, 0);
+    .inputs{
+        position: relative;
+        top: 100px;
+        height: auto;
+    
     }
-    .text-input::-moz-placeholder {
+    .Forget-password{
+        position: relative;
+        bottom: -200px;
+        text-align: right;
         color: white;
-        
-      }
-      
-      .text-input:-ms-input-placeholder {
-        color: white;
-      
-      }
-      
-      .text-input::-webkit-input-placeholder {
-        color: white;
+    }
+ 
+    img{
+        width: 64px;
 
-      
-      }
+
+    }
+
    
 
 }

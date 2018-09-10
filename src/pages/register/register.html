@@ -2,73 +2,68 @@
 
 
   <div class="main" > 
+    <!-- app logo -->
       <div class="logo" >
-          <img src="../../assets/imgs/christmas-star (1).png" alt="moments in time logo" width="80" >
-      
+          <img src="../../assets/icon/favicon.ico" alt="moments in time logo" width="80" >
         </div>
-        <div class="sigin " >
-         <u>Singin</u> 
-        </div>
-        <div  class="heading" >
-          Create new account
-        </div>
-    <ion-list class="input-list" >
-        <ion-item class="ion-item" >
-            <ion-label floating>USERNAME</ion-label>
-            <ion-input type="userame" value="" [(ngModel)]="user.username"></ion-input>
-          </ion-item>
+         <!-- end of app logo -->
 
-        <ion-item  class="ion-item">
-          <ion-label floating>EMAIL</ion-label>
-          <ion-input type="email" value="" [(ngModel)]="user.email"></ion-input>
-        </ion-item>
-      
-        <ion-item  class="ion-item" >   
-          <ion-label floating>PASSWORD</ion-label>
-          <ion-input type="password"  [(ngModel)]="user.password"></ion-input>
-        </ion-item>
-      </ion-list>
-        <div class="button" >
-            <button  ion-button round color="light" (click)="Register()" full>Register</button>
+        <!-- start inputs section -->
+        <div class="inputs">
+            <ion-item class="ion-item" >
+              <ion-label fixed ><ion-icon ios="ios-contact" md="md-contact"></ion-icon> Username</ion-label>
+              <ion-input type="userame" value="" placeholder=" "[(ngModel)]="user.username" placeholder="" ></ion-input>
+            </ion-item>
+            
+            <ion-item  class="ion-item">
+              <ion-label fixed ><ion-icon name="mail"></ion-icon>   Email</ion-label>
+              <ion-input type="email" value="" placeholder="" [(ngModel)]="user.email"></ion-input>
+            </ion-item>
+            
+            <ion-item  class="ion-item" >
+              <ion-label fixed ><ion-icon name="lock"></ion-icon>   Password</ion-label>
+              <ion-input type="password" placeholder=""  [(ngModel)]="user.password"></ion-input>
+            </ion-item>
+
           
-        </div>
+          <div class="button" >
+            <button  ion-button round color="primary" (click)="Register()" full>Register</button>
+          </div>
+             </div>
+               <!-- close inputs section  -->
 
-        <div class="signin-icons">
-
-           <div class="sigin-with" >or sigin with:</div>
-            <ion-grid class="grid" >
-            <ion-row >
-              <ion-col col-2>
-                <div>
-                    <div>
-                        <img src="../../assets/imgs/facebook (1).png" alt="facebook icon">
-                  </div> 
+               <!-- start signin section -->
+             
+             <div class="signin" >
+               <!-- signin with section -->
+               <div class="sign-with"  (click)="Login()">
+                 <p  >Sigin with:</p>
                 </div>
-              </ion-col> 
+                <!-- close sigin with section -->
 
-              <ion-col col-2>
-    
-                <div>
-                    <div>
-                       <img src="../../assets/imgs/google-plus (4).png" alt="google icon">
-                     
-                  </div> 
-                </div>
-              </ion-col>
-              <ion-col col-2>
-    
-                  <div>
-                      <div>
-                          <img src="../../assets/imgs/twitter.png" alt="twitter icon">
-                       
-                    </div> 
-                  </div>
-                </ion-col>
-            </ion-row>
-            </ion-grid>
-     
-  </div>
-</div>
+                <!-- start forget password section -->
+            <div class="Forget-password" >
+              <p>Forget password</p>
+            </div>
+               <!-- close forget password section -->
+
+             </div>
+            <!-- close signin section  -->
+            <!-- start  sigin with icons section -->
+
+            <div class="signin-icons">
+              <div class="facebook-logo" >
+                <img class="img" src="../../assets/imgs/facebook (2).svg" alt="facebook icon">
+              </div>
+              <div class="google-logo" >
+                <img  class="img" src="../../assets/imgs/google-plus.svg" alt="google icon">
+              </div> 
+              <div>
+                <img class="twitter-logo" src="../../assets/imgs/twitter.svg" alt="twitter icon">
+              </div>
+            </div>
+            <!-- close sigin icons section -->
+          </div>
 
     
 
