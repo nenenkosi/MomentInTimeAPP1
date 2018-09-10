@@ -15,40 +15,17 @@ page-register {
     }
     .signin-icons{
         position: relative;
-        bottom: 132px;
+        bottom: -110px;
+        text-align: center;
+        right: -25%;
     }
     .sign-with{
         position: relative;
-        top: 100px;
+        top: 120px;
         text-align: center;
-    }
-    .signin{
-        height: auto;
-        position: relative;
-
     }
     p{
         font-weight: bold;
-    }
-    .facebook-logo{
-        position: relative;
-        top: 200px;
-        left: 55%;
-      
-    }
-    .google-logo{
-        position: relative;
-        text-align: center;
-        top: 143px;
-        left: -13%;
-    
-        
-    }
-    .twitter-logo{
-        position: relative;
-        text-align: right;
-        top: 110px;
-
     }
     .logo{
         position: relative;
@@ -60,19 +37,18 @@ page-register {
     }
     .inputs{
         position: relative;
-        top: 100px;
+        top: 120px;
         height: auto;
     
     }
-    .Forget-password{
-        position: relative;
-        bottom: -200px;
-        text-align: right;
-        color: white;
+    ion-icon{
+        margin-right: 6px;
+
     }
- 
+
+   
     img{
-        width: 64px;
+        width: 50px;
 
 
     }
