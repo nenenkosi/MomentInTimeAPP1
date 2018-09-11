@@ -87,4 +87,9 @@ export class LoginPage {
   logInWithFaceBook(){
     this.db.logInWithFaceBook();
   }
+
+  loginwithGooogle(){
+    alert("ggg")
+    this.db.SignWithGoogle();
+  }
 }
