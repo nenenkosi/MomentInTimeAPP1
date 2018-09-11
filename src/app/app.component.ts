@@ -6,7 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import {RegisterPage} from '../pages/register/register';
 import {LoginPage} from '../pages/login/login';
-
+import {AdminPage} from '../pages/admin/admin'
 declare var firebase
 
 @Component({
@@ -17,16 +17,16 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
 
-    firebase.auth().onAuthStateChanged(user => {
+    // firebase.auth().onAuthStateChanged(user => {
 
-      if (user) {
-        this.rootPage = LoginPage
-        console.log(user)
-      } else {
-        // No user is signed in.
-       // this.rootPage = HomePage
-      }
-    })
+    //   if (user) {
+    //     this.rootPage = LoginPage
+    //     console.log(user)
+    //   } else {
+    //     // No user is signed in.
+    //    // this.rootPage = HomePage
+    //   }
+    // })
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

@@ -6,12 +6,28 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding="true">
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
     <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+      <ion-label>Send to</ion-label>
+      <ion-select [(ngModel)]="sendto">
+        <ion-option>Friend</ion-option>
+        <ion-option>Family</ion-option>
+        <ion-option>Lover</ion-option>
+        <ion-option>Other</ion-option>
+      </ion-select>
     </ion-item>
   </ion-list>
+
+  <button ion-button block (click)="message()">Message</button>
+
+ 
+
+  <ion-item>
+    <ion-label>Send Date</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY:HH:mm" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+
+  <button ion-button block (click)="sendvia()">Send via</button>
+  <button ion-button block (click)="personalized()">TEST</button>
 </ion-content>

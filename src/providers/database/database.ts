@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import { AngularFireAuth } from '../../../node_modules/angularfire2/auth';
 declare var firebase ;
 
 /*
@@ -14,7 +15,7 @@ export class DatabaseProvider {
 
   provider = new firebase.auth.GoogleAuthProvider();
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient,private fire:AngularFireAuth) {
     console.log('Hello DatabaseProvider Provider');
   }
 
@@ -104,5 +105,12 @@ SignWithGoogle(){
   
 
 }
-
+// logInWithFaceBook
+logInWithFaceBook(){
+  this.fire.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(res=>{
+    console.log(res);
+ 
+  })
+ 
+ }
 }

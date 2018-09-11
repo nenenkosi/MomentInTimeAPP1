@@ -1,3 +1,79 @@
 page-login {
+                                                                       .background{
+       background-image: url('../../assets/imgs/first\ sprint2.png');
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat
+   }
+   p{
+       position: absolute;
+       text-align: center;
+       top: 65%;
+       left: 50%;
+       -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+       -ms-transform: translate(-50%, -50%);
+       transform: translate(-50%, -50%);
+   }
+   .Login{
+       position: absolute;
+       top: 55%;
+       width: 90%
 
+   }
+   .forget{
+       position: relative;
+       left: 25%;
+       font-size: 1em
+   }
+   .reg{
+       font-size: 1em
+   }
+   ion-list{
+       position: fixed;
+       top: 40%;
+       width: 90%;
+    //    left: 50%;
+    //    -webkit-transform: translate(-50%, -50%);
+    //    -moz-transform: translate(-50%, -50%);
+    //    -o-transform: translate(-50%, -50%);
+    //    -ms-transform: translate(-50%, -50%);
+    //    transform: translate(-50%, -50%);
+   }
+   .facebook{
+       position: absolute;
+       top: 80%;
+       height: 9vh;
+   }
+   .gmail{
+       position: absolute;
+       top: 75%;
+       left: 27%;
+       height: 9vh;
+   }
+   .twitter{
+       position: absolute;
+       top: 72%;
+       left: 50%;
+       height: 9vh;
+   }
+   .flex{
+ position: absolute;
+ top: 92%;
+ left: -2%;
+ padding: 0%;
+   }
+   .col{
+       width: 50%;
+       padding: 0%
+   }
+   .signin-icons{
+       position: absolute;
+       top: 70%;
+       left: 23%;
+   }
+   .img{
+   padding: 5%
+   }
 }

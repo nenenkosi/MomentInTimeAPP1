@@ -4,6 +4,9 @@ import {user} from '../model/user'
 import {DatabaseProvider} from '../../providers/database/database' ;
 import { RegisterPage } from '../register/register';
 import { AlertController } from 'ionic-angular';
+import { TabsPage } from '../tabs/tabs';
+import {AdminPage} from '../admin/admin'
+import { THIS_EXPR } from '../../../node_modules/@angular/compiler/src/output/output_ast';
 
 declare var firebase
 /**
@@ -72,5 +75,16 @@ export class LoginPage {
   de(){
     this.navCtrl.push(RegisterPage)
   }
+  admin(){
+    this.navCtrl.push(AdminPage)
 
+    
+
+
+  }
+
+
+  logInWithFaceBook(){
+    this.db.logInWithFaceBook();
+  }
 }
