@@ -1,7 +1,7 @@
 page-register {
     ion-content{
    
-       background:url("../../assets/imgs/first\ sprint1.png");
+       background:url("../../assets/imgs/first\ sprint0.png");
        background-size: cover;
        background-repeat: no-repeat;
        background-position: center;
@@ -34,6 +34,8 @@ page-register {
     }
     .main{
         height: auto;
+        position: relative;
+        top: 40px;
     }
     .inputs{
         position: relative;
@@ -51,6 +53,33 @@ page-register {
         width: 50px;
 
 
+    }
+    h1{
+        position: absolute;
+        font-size: 5em;
+        text-align: center;
+        top: 25%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: #1e6ef7;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    }
+    p{
+        position: absolute;
+        font-size: 15px;
+        top: 25px;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: #1e6ef7;
+        font-family: cursive
     }
 
    

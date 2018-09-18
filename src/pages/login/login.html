@@ -7,56 +7,78 @@
 
 
 
-<ion-content padding class="background">
-<ion-list>
-  <ion-item>
-    <ion-label> <ion-icon color="primary" name="mail"></ion-icon>
-    </ion-label>
-    <ion-input type="email"  placeholder="Email" [(ngModel)]="user.email"></ion-input>
-  </ion-item>
+<ion-content padding class="background" >
+  <div class="body" ion-fixed >
 
-  <ion-item>
-    <ion-label><ion-icon color="primary" name="unlock"></ion-icon></ion-label>
-    <ion-input type="password"  placeholder="Password" [(ngModel)]="user.password"></ion-input>
-  </ion-item>
-</ion-list>
+    <div class="logo-sec">
+     <h1>MIT</h1>
+     <p>Moment in Time</p>
+   </div>
+   <!-- close body -->
 
-<button block ion-button round class="Login" (click)="Login(user)">Login</button>
-
-  <p>or sign in with:</p>
-
-<ion-grid class="signin-icons">
-  
-  <ion-row align-items-center>
-    <ion-col col-2 align-self-center (click)="logInWithFaceBook()">
-      <img class="img" src="../../assets/imgs/facebook (2).svg" alt="facebook icon">
-    </ion-col>
-
-
-    <ion-col col-2>
-      <img class="img" src="../../assets/imgs/twitter.svg" alt="twitter icon">
-    </ion-col >
+   <div class="inputs" >
+     <ion-list no-lines>
+     <ion-item>
+       <ion-label> <ion-icon color="primary" name="mail"></ion-icon>
+       </ion-label>
+       <ion-input type="email"  placeholder="Email" [(ngModel)]="user.email"></ion-input>
+     </ion-item>
    
-    <ion-col col-2 (click)="loginwithGooogle()">
-      <img  class="img" src="../../assets/imgs/google-plus.svg" alt="google icon">
-    </ion-col>
-  </ion-row>
-</ion-grid>
+     <ion-item>
+       <ion-label><ion-icon color="primary" name="unlock"></ion-icon></ion-label>
+       <ion-input type="password"  placeholder="Password" [(ngModel)]="user.password"></ion-input>
+     </ion-item>
+   </ion-list>
+   <div class="buttons" >
+     <button block ion-button round class="Login" (click)="Login(user)">Login</button>
+    </div>
+  </div>
+  <!-- close inputs -->
 
+  <div class="signwith" >
+      <h6>or sign in with:</h6>
+      <ion-grid class="signin-icons">
+        <ion-row align-items-center>
+          <ion-col col-2 align-self-center (click)="logInWithFaceBook()">
+            <img class="img" src="../../assets/imgs/facebook (2).svg" alt="facebook icon">
+          </ion-col>
+          <ion-col col-2 (click)="loginwithGooogle()">
+            <img  class="img" src="../../assets/imgs/google-plus.svg" alt="google icon">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </div>
+  <!-- close sigin with -->
+  <div >
+      <ion-grid class="register">
+          <ion-row >
+            <ion-col col-6  >
+              <div  >
+                 <button ion-button clear color="dark" class="reg"  (click)="register()">Don't have an account?  </button>
+              </div>
+               
+            </ion-col>
+            <ion-col >
+              <div>
+                 <button ion-button clear class="Forget" color="dark" (click)="forgetPassword(user)">Forget Password </button>
+              </div>
+               
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+       
+ 
 
-<ion-grid class="flex">
-<ion-row >
-  <ion-col>
-    <button class="reg" ion-button clear color='light' (click)="register()">Don't Have An Account</button>
-  </ion-col>
-  <ion-col>
-    <button class="forget" ion-button clear color='light' (click)="forgetPassword(user)">Forget Password</button>
-  </ion-col>
-</ion-row>
-</ion-grid>  
-                                                                                                                             
-<button ion-button (click)="tabs()" >tabs</button>
+     
+           
 
-<button (click)="admin()">ADmin</button>
+  </div>
+  <!-- close register section -->
 
-</ion-content>
+  
+   
+  </div>           
+  
+  
+   <!-- <button ion-button (click)="message()">message</button> -->
+   </ion-content>

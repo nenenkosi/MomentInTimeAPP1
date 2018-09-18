@@ -1,0 +1,50 @@
+
+
+
+<ion-content padding class="background">
+  <div class="body">
+    <div>
+      <button ion-button clear icon-only large color="light"(click)="back()">
+        <ion-icon name="arrow-dropleft-circle"></ion-icon>
+      </button>
+        <h1>Get People & Days Worth Celebrating.</h1>
+    </div>
+    <div class="top">
+        <ion-list >
+            <ion-item class="item">
+              <ion-label>Send to</ion-label>
+              <ion-select [(ngModel)]="sendto">
+                <ion-option>Friend</ion-option>
+                <ion-option>Family</ion-option>
+                <ion-option>Lover</ion-option>
+                <ion-option>Other</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+         
+       <ion-item>
+        <ion-label>Start Time</ion-label>
+        <ion-datetime displayFormat="h:mm A" pickerFormat="hh:mm A"  [(ngModel)]="time"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Start Date</ion-label>
+            <ion-datetime displayFormat="DDD MMM YYYY"  [(ngModel)]="date"></ion-datetime>
+            </ion-item>
+
+  
+    </div>
+    <div class="buttons">
+        <button ion-button block round (click)="message()">Message</button>
+        <br>
+       
+    </div>
+  
+  
+
+      
+
+  </div>
+    
+    
+</ion-content>

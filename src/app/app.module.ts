@@ -19,6 +19,11 @@ import { AutomatePage } from '../pages/automate/automate';
 import {AdminPage} from '../pages/admin/admin'
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
+import { MessagePage } from '../pages/message/message';
+import { SMS } from '@ionic-native/sms';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 var config = {
   apiKey: "AIzaSyD-60vJrUA-k0qFjOyc-2quuULN2t9DKAc",
@@ -35,7 +40,7 @@ var config = {
     AboutPage,
     ContactPage,
     HomePage, AdminPage ,
-    TabsPage , LoginPage , RegisterPage,PersonalizedPage,AutomatePage
+    TabsPage , LoginPage , RegisterPage,PersonalizedPage,AutomatePage,MessagePage
   ],
   imports: [
     BrowserModule,HttpClientModule ,
@@ -48,12 +53,12 @@ var config = {
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage, AdminPage ,
-    TabsPage , RegisterPage , LoginPage,PersonalizedPage,AutomatePage
+    HomePage, AdminPage , 
+    TabsPage , RegisterPage , LoginPage,PersonalizedPage,AutomatePage,MessagePage
   ],
   providers: [
     StatusBar,
-    SplashScreen, DatabaseProvider ,
+    SplashScreen, DatabaseProvider , SMS , SocialSharing ,Contacts,LocalNotifications ,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   
   ]

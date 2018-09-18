@@ -8,25 +8,26 @@
   <div class="main" > 
     <!-- app logo -->
       <div class="logo" >
-          <img src="../../assets/icon/favicon.ico" alt="moments in time logo" width="80" >
+          <h1>MIT</h1>
+          <p>Moment in Time</p>
         </div>
          <!-- end of app logo -->
 
         <!-- start inputs section -->
         <div class="inputs">
-            <ion-item class="ion-item" >
-              <ion-label fixed ><ion-icon ios="ios-contact" md="md-contact"></ion-icon>Username</ion-label>
-              <ion-input type="userame" value="" placeholder=" "[(ngModel)]="user.name" placeholder="" ></ion-input>
+            <ion-item class="ion-item"  >
+              <ion-label ><ion-icon color="primary" ios="ios-contact" md="md-contact"></ion-icon></ion-label>
+              <ion-input type="userame" value="" placeholder=" Username"[(ngModel)]="user.name"></ion-input>
             </ion-item>
             
             <ion-item  class="ion-item">
-              <ion-label fixed ><ion-icon name="mail"></ion-icon>Email</ion-label>
-              <ion-input type="email" value="" placeholder="" [(ngModel)]="user.email"></ion-input>
+              <ion-label ><ion-icon  color="primary" name="mail"></ion-icon></ion-label>
+              <ion-input type="email" value="" placeholder="Email" [(ngModel)]="user.email"></ion-input>
             </ion-item>
             
             <ion-item  class="ion-item" >
-              <ion-label fixed ><ion-icon name="lock"></ion-icon>Password</ion-label>
-              <ion-input type="password" placeholder=""  [(ngModel)]="user.password"></ion-input>
+              <ion-label><ion-icon color="primary"  name="lock"></ion-icon></ion-label>
+              <ion-input type="password" placeholder="Password"  [(ngModel)]="user.password"></ion-input>
             </ion-item>
 
           
@@ -35,44 +36,6 @@
           </div>
              </div>
                <!-- close inputs section  -->
-
-               <!-- start signin section -->
-             
-             <div class="signin" >
-               <!-- signin with section -->
-               <div class="sign-with"  (click)="Login()">
-                 <p  >Sigin with:</p>
-                </div>
-                <!-- close sigin with section -->
-             </div>
-            <!-- close signin section  -->
-            <!-- start  sigin with icons section -->
-
-            <div class="signin-icons">
-              <ion-grid>
-                <ion-row>
-                  <ion-col col-2 >
-                    <div class="facebook-logo" >
-                <img class="img" src="../../assets/imgs/facebook (2).svg" alt="facebook icon">
-              </div>
-                  </ion-col>
-                  <ion-col col-2 >
-                    <div class="google-logo" >
-                <img  class="img" src="../../assets/imgs/google-plus.svg" alt="google icon">
-              </div> 
-                  </ion-col>
-                  <ion-col col-2 >
-                    <div>
-                <img class="twitter-logo" src="../../assets/imgs/twitter.svg" alt="twitter icon">
-              </div>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-              
-              
-              
-            </div>
-            <!-- close sigin icons section -->
             
           </div>
           <!-- close main section -->

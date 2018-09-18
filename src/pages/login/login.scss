@@ -1,79 +1,148 @@
 page-login {
-                                                                       .background{
-       background-image: url('../../assets/imgs/first\ sprint2.png');
-       background-size: cover;
-       background-position: center;
-       background-repeat: no-repeat
-   }
-   p{
-       position: absolute;
-       text-align: center;
-       top: 65%;
-       left: 50%;
-       -webkit-transform: translate(-50%, -50%);
-       -moz-transform: translate(-50%, -50%);
-       -o-transform: translate(-50%, -50%);
-       -ms-transform: translate(-50%, -50%);
-       transform: translate(-50%, -50%);
-   }
-   .Login{
-       position: absolute;
-       top: 55%;
-       width: 90%
+    .background{
+        background-image: url('../../assets/imgs/first\ sprint2.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat
+    }
+    .body{
+        position: relative;
+    }
+    .logo-sec{
+        position: relative;
+        text-align: center;
+        top: 80px;
 
-   }
-   .forget{
-       position: relative;
-       left: 25%;
-       font-size: 1em
-   }
-   .reg{
-       font-size: 1em
-   }
-   ion-list{
-       position: fixed;
-       top: 40%;
-       width: 90%;
-    //    left: 50%;
-    //    -webkit-transform: translate(-50%, -50%);
-    //    -moz-transform: translate(-50%, -50%);
-    //    -o-transform: translate(-50%, -50%);
-    //    -ms-transform: translate(-50%, -50%);
-    //    transform: translate(-50%, -50%);
-   }
-   .facebook{
-       position: absolute;
-       top: 80%;
-       height: 9vh;
-   }
-   .gmail{
-       position: absolute;
-       top: 75%;
-       left: 27%;
-       height: 9vh;
-   }
-   .twitter{
-       position: absolute;
-       top: 72%;
-       left: 50%;
-       height: 9vh;
-   }
-   .flex{
- position: absolute;
- top: 92%;
- left: -2%;
- padding: 0%;
-   }
-   .col{
-       width: 50%;
-       padding: 0%
-   }
-   .signin-icons{
-       position: absolute;
-       top: 70%;
-       left: 23%;
-   }
-   .img{
-   padding: 5%
-   }
+    }
+    .inputs{
+        position: relative;
+        top: 100px;
+
+    }
+    .signwith{
+        position: relative;
+        bottom: -110px;
+        text-align: center;
+
+    }
+    .signin-icons{
+        position: relative;
+        left: 30%;
+        top: -5px;
+      
+        }
+        .register{
+            position: relative;
+            top: 180px;
+            color: black;
+            
+         
+        }
+        // .reg{
+        //     position: relative;
+        //     left: -25%;
+        //     top: 53px;
+        
+        // }
+        // .forget{
+        //     position: relative;
+        //     right: -30%;
+        // }
+        .button{
+            width: 100%;
+
+        }
+
+
+    
+
+
+
+    h1{
+     position: relative;
+     font-size: 5em;
+     text-align: center;
+     top: 50px;
+     left: 50%;
+     -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+     -o-transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+     color: #1e6ef7;
+     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+ }
+ p{
+     position: relative;
+     font-size: 20px;
+     text-align: center;
+     top: -10px;
+     color: #1e6ef7;
+  
+     font-family: cursive
+ }
+
+//     .Login{
+//      position: relative;
+//         // top: 20%;
+//     }
+//     .forget{
+//      position: relative;
+//     //  bottom: -180px;
+//     //  left: 17%;
+//      // padding: 0%;
+//      // font-size: 1em;
+//      color: black
+//     }
+//     .reg{ 
+//      position: relative;
+//     //  bottom: -180px;
+//     //  left: -2%;
+//      padding: 0%;
+//       font-size: 1em;
+//       color: black
+//     }
+//     ion-list{
+//         position: relative;
+//         // top: 20%;
+//     }
+//     .facebook{
+//      position: relative;
+//         // top: 20%;
+//         height: 9vh;
+//     }
+//     .gmail{
+//      position: relative;
+//         // top: 20%;
+//         left: 27%;
+//         height: 9vh;
+//     }
+   
+//     .flex{
+//      position: relative;
+// //   top: 92%;
+// //   left: -2%;
+//   padding: 0%;
+//     }
+//     .col{
+//         width: 50%;
+//         padding: 0%
+//     }
+//     .signin-icons{
+//      position: relative;
+//         // top: 20%;
+//         left: 30%;
+//     }
+//     .img{
+//     padding: 5%;
+//     }
+//     .logo-sec{
+//      position: relative;
+//      text-align: center;
+//     //   top: 80px;
+//     }
+//     h1{
+//         text-align: center;
+//     }
+   
 }

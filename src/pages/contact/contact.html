@@ -1,33 +1,5 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding="true">
-  <ion-list>
-    <ion-item>
-      <ion-label>Send to</ion-label>
-      <ion-select [(ngModel)]="sendto">
-        <ion-option>Friend</ion-option>
-        <ion-option>Family</ion-option>
-        <ion-option>Lover</ion-option>
-        <ion-option>Other</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
 
-  <button ion-button block (click)="message()">Message</button>
+<ion-content padding class="background">
 
- 
-
-  <ion-item>
-    <ion-label>Send Date</ion-label>
-    <ion-datetime displayFormat="DD/MM/YYYY:HH:mm" [(ngModel)]="myDate"></ion-datetime>
-  </ion-item>
-
-  <button ion-button block (click)="sendvia()">Send via</button>
-  <button ion-button block (click)="personalized()">TEST</button>
 </ion-content>

@@ -1,11 +1,94 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-
- 
-
-</ion-content>
+<ion-content padding class="no-scroll" >
+        <div class="body" ion-fixed >
+          <ion-grid no-padding fixed-content >
+              <ion-row>
+                  <ion-col  >
+                      <div>
+                            <ion-card style="background:#87e0ff" class="card" (click)="birthday()">
+                                    <ion-card-content> 
+                                        <img src="../../assets/imgs/icons8_Wedding_Cake_96px_1.png" alt="" >
+                                      <ion-card-title>
+                                          <h3>Birthday</h3>
+                                         
+                                        </ion-card-title>
+                                    </ion-card-content>
+                                  </ion-card>
+                            
+                      </div>
+                  </ion-col>
+                  <ion-col>
+                    <div>
+                            <ion-card class="card" style="background:#87e0ff"  (click)="graduation()">
+                                    <ion-card-content> 
+                                       <img src="../../assets/imgs/icons8_Graduation_Cap_96px.png" alt="">
+                                        <ion-card-title>
+                                            <h3>Graduation</h3>
+                                            
+                                          </ion-card-title>
+                                      </ion-card-content>
+                                </ion-card>
+                    </div>
+                </ion-col>
+              </ion-row>
+        
+              <ion-row>
+                  <ion-col col >
+                      <div>
+                            <ion-card class="card" style="background:#53c7f0" (click)="babyShower()">
+                                    <ion-card-content > 
+                                        <img src="../../assets/imgs/icons8_Mother_96px.png" alt="">
+                                        <ion-card-title>
+                                            <h3>Baby Shower</h3>
+                                            
+                                          </ion-card-title>
+                                      </ion-card-content>
+                                    </ion-card>
+                              
+                      </div>
+                  </ion-col>
+                  <ion-col>
+                      <div>
+                            <ion-card class="card" style="background:#53c7f0" (click)="newJob()">
+                                    <ion-card-content> 
+                                        <img src="../../assets/imgs/icons8_Briefcase_96px.png" alt="">
+                                        <ion-card-title>
+                                            <h3>New Job/career</h3>
+                                          </ion-card-title>
+                                      </ion-card-content>
+                                </ion-card>
+                      </div>
+                  </ion-col>
+              </ion-row>
+              
+              <ion-row>
+                  <ion-col>
+                      <div>
+                            <ion-card class="card" style="background:#1d97c1" (click)="anniversary()" >
+                                    
+                                        <img src="../../assets/imgs/icons8_Wedding_Gift_60px.png" alt="">
+                                        <ion-card-title>
+                                            <h3>Anniversary</h3>
+                                            
+                                          </ion-card-title>
+                                    
+                                </ion-card>
+                      </div>
+                  </ion-col>
+                  <ion-col>
+                      <div>
+                            <ion-card class="card" style="background:#1d97c1"  (click)="wedding()">
+                                    <ion-card-content> 
+                                       <img src="../../assets/imgs/icons8_Heart_With_Arrow_96px.png" alt="">
+                                        <ion-card-title>
+                                            <h3>Wedding</h3>
+                                            
+                                          </ion-card-title>
+                                      </ion-card-content>
+                                </ion-card>
+                      </div>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+        </div>
+        
+      </ion-content>

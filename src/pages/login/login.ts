@@ -5,9 +5,10 @@ import {DatabaseProvider} from '../../providers/database/database' ;
 import { RegisterPage } from '../register/register';
 import { AlertController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
-import {AdminPage} from '../admin/admin'
-import { THIS_EXPR } from '../../../node_modules/@angular/compiler/src/output/output_ast';
-
+//import {AdminPage} from '../admin/admin'
+//import { THIS_EXPR } from '../../../node_modules/@angular/compiler/src/output/output_ast';
+//import {HomePage} from '../home/home';
+import { MessagePage } from '../message/message';
 declare var firebase
 /**
  * Generated class for the LoginPage page.
@@ -34,13 +35,16 @@ export class LoginPage {
 
   Login(user:user){
 
-    var users = firebase.auth().currentUser.uid;
+    //alert("clicked")
+
+   // var users = firebase.auth().currentUser.uid;
 
     if(user.email !=undefined && user.password !=undefined){
       this.db.login(user.email ,user.password).then(()=>{
         
-        firebase.database().ref("user/" +users).set({
-        })
+        
+
+        this.navCtrl.setRoot(TabsPage);
        
       } ,(error)=>{
         const alert = this.alertCtrl.create({
@@ -48,13 +52,14 @@ export class LoginPage {
           subTitle:  error,
           buttons: ['OK']
         });
+       
         alert.present();
   
       })
     }else{
       const alert = this.alertCtrl.create({
         title: 'Confirmarion',
-        subTitle: 'Please all details',
+        subTitle: 'Please enter all details',
         buttons: ['OK']
       });
       alert.present();
@@ -66,8 +71,22 @@ export class LoginPage {
 
   forgetPassword(user:user){
     this.db.forgetPassword(user.email).then(()=>{
-      alert("success")
+
+      const alert = this.alertCtrl.create({
+        title: 'CONFIRMATION',
+        subTitle:  "Please check your Email",
+        buttons: ['OK']
+      });
+      alert.present();
+      
     } , (error)=>{
+
+      const alert = this.alertCtrl.create({
+        title: 'CONFIRMATION',
+        subTitle:  error.message,
+        buttons: ['OK']
+      });
+      alert.present();
 
     })
   }
@@ -75,15 +94,14 @@ export class LoginPage {
   de(){
     this.navCtrl.push(RegisterPage)
   }
-  admin(){
-    this.navCtrl.push(AdminPage)
-
+  message=function(){
+    this.navCtrl.push(MessagePage)
     
-
-
   }
 
-
+  tabs(){
+    this.navCtrl.push(TabsPage)
+  }
   logInWithFaceBook(){
     this.db.logInWithFaceBook();
   }
@@ -91,5 +109,9 @@ export class LoginPage {
   loginwithGooogle(){
     alert("ggg")
     this.db.SignWithGoogle();
+  }
+
+  register(){
+    this.navCtrl.push(RegisterPage);
   }
 }

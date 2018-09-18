@@ -1,0 +1,33 @@
+page-message {
+    .list-ios > .item-block:first-child{
+        border-top: 0.55px solid rgba(0, 0, 0, 0);
+    }
+    .background{
+        background-image: url('../../assets/imgs/first\ sprin\ halft.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat
+    }
+    .item{
+        border-radius: 25px
+    }
+    .top{
+        position: relative;
+        top: 30px;
+      
+    }
+    h1{
+        color: white;
+        text-align: center;
+        font-size: 2.5em;
+          
+     font-family: cursive;
+    }
+    .buttons{
+        position: relative;
+        top: 70px;
+    }
+    
+ 
+    
+}

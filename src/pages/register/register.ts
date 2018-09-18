@@ -6,6 +6,7 @@ import { ToastController } from 'ionic-angular';
 import {HomePage} from '../../pages/home/home'
 
 import { AlertController } from 'ionic-angular';
+import { TabsPage } from '../tabs/tabs';
 declare var firebase
 
 /**
@@ -44,6 +45,7 @@ export class RegisterPage {
         position: 'middle'
       });
       toast.present();
+      this.navCtrl.setRoot(TabsPage);
       
     } , (error)=>{
  

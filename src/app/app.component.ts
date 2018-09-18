@@ -7,13 +7,13 @@ import { TabsPage } from '../pages/tabs/tabs';
 import {RegisterPage} from '../pages/register/register';
 import {LoginPage} from '../pages/login/login';
 import {AdminPage} from '../pages/admin/admin'
-declare var firebase
+import {HomePage} from '../pages/home/home'
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginPage;
+  rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
 

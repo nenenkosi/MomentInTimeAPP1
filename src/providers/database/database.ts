@@ -13,6 +13,12 @@ declare var firebase ;
 @Injectable()
 export class DatabaseProvider {
 
+  graduationArray = [];
+  weddingArray=[];
+  birthdayArray=[];
+  anniversaryArray=[];
+  babyShowerArray=[];
+  newJobArray=[];
   provider = new firebase.auth.GoogleAuthProvider();
 
   constructor(public http: HttpClient,private fire:AngularFireAuth) {
@@ -55,14 +61,26 @@ export class DatabaseProvider {
 
 }
 
+
+
+
 forgetPassword(email){
+
   return new Promise((resolve, reject)=>{
-    firebase.auth().sendPasswordResetEmail(email) ;
-    resolve();
+    firebase.auth().sendPasswordResetEmail(email) .then(()=> {
+
+      resolve();
+    } , (error)=>{
+      reject(error)
+
+    })
+    
 
 })
 
 }
+
+
 
 SignWithGoogle(){
   var users= firebase.auth().currentUser;
@@ -113,4 +131,202 @@ logInWithFaceBook(){
   })
  
  }
+
+
+ anniversaryMessage(){
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref('category/'+ 'ANNIVERSARY' ).on('value', (data: any) => {
+
+      var message = data.val();
+       console.log(data.val());
+ 
+       var keys: any = Object.keys(message);
+ 
+       console.log(keys);
+ 
+       for (var i = 0; i < keys.length; i++){
+        var k = keys[i];
+ 
+        let obj = {
+          k:keys ,
+          message:message[k].message
+ 
+        }
+        this.anniversaryArray.push(obj)
+
+        resolve(this.anniversaryArray);
+  }
+ 
+ 
+  })
+
+ })
+  
+
+ }
+
+birthdayMessages(){
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref('category/'+ 'Other' ).on('value', (data: any) => {
+
+      var message = data.val();
+       console.log(data.val());
+ 
+       var keys: any = Object.keys(message);
+ 
+       console.log(keys);
+ 
+       for (var i = 0; i < keys.length; i++){
+        var k = keys[i];
+ 
+        let obj = {
+          k:keys ,
+          message:message[k].message
+ 
+        }
+        this.birthdayArray.push(obj)
+
+        resolve(this.birthdayArray);
+  }
+ 
+ 
+  })
+
+ })
+  
+
+}
+
+babyShowerMessages(){
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref('category/'+ 'babyShower' ).on('value', (data: any) => {
+
+      var message = data.val();
+       console.log(data.val());
+ 
+       var keys: any = Object.keys(message);
+ 
+       console.log(keys);
+ 
+       for (var i = 0; i < keys.length; i++){
+        var k = keys[i];
+ 
+        let obj = {
+          k:keys ,
+          message:message[k].message
+ 
+        }
+        this.babyShowerArray.push(obj)
+
+        resolve(this.babyShowerArray);
+  }
+ 
+ 
+  })
+
+ })
+  
+
+
+}
+
+
+GraduationMessages(){
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref('category/'+ 'Graduation' ).on('value', (data: any) => {
+
+      var message = data.val();
+       console.log(data.val());
+ 
+       var keys: any = Object.keys(message);
+ 
+       console.log(keys);
+ 
+       for (var i = 0; i < keys.length; i++){
+        var k = keys[i];
+ 
+        let obj = {
+          k:keys ,
+          message:message[k].message
+ 
+        }
+        this.graduationArray.push(obj)
+
+        resolve(this.graduationArray);
+  }
+ 
+ 
+  })
+
+ })
+  
+
+
+
+}
+
+weddingMessage(){
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref('category/'+ 'Weddings' ).on('value', (data: any) => {
+
+      var message = data.val();
+       console.log(data.val());
+ 
+       var keys: any = Object.keys(message);
+ 
+       console.log(keys);
+ 
+       for (var i = 0; i < keys.length; i++){
+        var k = keys[i];
+ 
+        let obj = {
+          k:keys ,
+          message:message[k].message
+ 
+        }
+        this.weddingArray.push(obj)
+
+        resolve(this.weddingArray);
+  }
+ 
+ 
+  })
+
+ })
+  
+
+}
+
+newJobMessage(){
+  return new Promise((resolve, reject)=>{
+    firebase.database().ref('category/'+ 'newJob' ).on('value', (data: any) => {
+
+      var message = data.val();
+       console.log(data.val());
+ 
+       var keys: any = Object.keys(message);
+ 
+       console.log(keys);
+ 
+       for (var i = 0; i < keys.length; i++){
+        var k = keys[i];
+ 
+        let obj = {
+          k:keys ,
+          message:message[k].message
+ 
+        }
+        this.newJobArray.push(obj)
+
+        resolve(this.newJobArray);
+  }
+ 
+ 
+  })
+
+ })
+
+
+}
+
 }
