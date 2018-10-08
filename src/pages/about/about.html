@@ -1,4 +1,41 @@
-
-<ion-content padding class="background">
-
+<ion-header >
+    <ion-toolbar color="b" text-center>
+      <ion-title>Review</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content padding class="background" text-center>
+  <ion-list *ngFor="let v of sentMessages; let u = index" >
+    <div (click)="sendVia(v.message)" >
+      <ion-item-sliding no-lines class="item"  >
+        <ion-item  text-wrap  >
+          <div class="heading" >
+            {{v.name}}
+          </div>
+          
+          <div  >
+            {{v.message}}
+             {{v.automessage}}
+          </div>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+              </ion-col>
+              <ion-col center text-right>
+                <ion-note  color="grey" >
+                  {{countDown}}
+                </ion-note>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="b" (click)="Delete(v.key)">
+            <ion-icon name="delete"></ion-icon>
+            Delete
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
+  </ion-list>
 </ion-content>

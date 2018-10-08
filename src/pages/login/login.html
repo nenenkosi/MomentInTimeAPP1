@@ -1,4 +1,5 @@
-<!--
+        
+        <!--
   Generated template for the LoginPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
@@ -7,8 +8,8 @@
 
 
 
-<ion-content padding class="background" >
-  <div class="body" ion-fixed >
+<ion-content text-center class="background">
+  <div padding class="body" ion-fixed >
 
     <div class="logo-sec">
      <h1>MIT</h1>
@@ -17,68 +18,45 @@
    <!-- close body -->
 
    <div class="inputs" >
-     <ion-list no-lines>
-     <ion-item>
-       <ion-label> <ion-icon color="primary" name="mail"></ion-icon>
+  
+     <ion-item class="items" >
+       <ion-label  > <ion-icon color="light" name="mail"></ion-icon>
        </ion-label>
-       <ion-input type="email"  placeholder="Email" [(ngModel)]="user.email"></ion-input>
+       <ion-input type="email"   placeholder="Email" [(ngModel)]="user.email"></ion-input>
      </ion-item>
    
-     <ion-item>
-       <ion-label><ion-icon color="primary" name="unlock"></ion-icon></ion-label>
+     <ion-item class="items" >
+       <ion-label><ion-icon color="light" name="unlock"></ion-icon></ion-label>
        <ion-input type="password"  placeholder="Password" [(ngModel)]="user.password"></ion-input>
      </ion-item>
-   </ion-list>
+  
    <div class="buttons" >
-     <button block ion-button round class="Login" (click)="Login(user)">Login</button>
+     <button block ion-button round class="Login"outline color="light" (click)="Login(user)">Login</button>
     </div>
+    
   </div>
   <!-- close inputs -->
-
   <div class="signwith" >
-      <h6>or sign in with:</h6>
+      <h6 color="primary" >or sign in with:</h6>
       <ion-grid class="signin-icons">
         <ion-row align-items-center>
           <ion-col col-2 align-self-center (click)="logInWithFaceBook()">
-            <img class="img" src="../../assets/imgs/facebook (2).svg" alt="facebook icon">
+            <img class="img" src="../../assets/imgs/icons8_Facebook_Circled_100px_3.png" alt="facebook icon">
           </ion-col>
           <ion-col col-2 (click)="loginwithGooogle()">
-            <img  class="img" src="../../assets/imgs/google-plus.svg" alt="google icon">
+            <img  class="img" src="../../assets/imgs/icons8_Google_Plus_Circled_100px_1.png" alt="google icon">
           </ion-col>
         </ion-row>
       </ion-grid>
   </div>
   <!-- close sigin with -->
-  <div >
-      <ion-grid class="register">
-          <ion-row >
-            <ion-col col-6  >
-              <div  >
-                 <button ion-button clear color="dark" class="reg"  (click)="register()">Don't have an account?  </button>
-              </div>
-               
-            </ion-col>
-            <ion-col >
-              <div>
-                 <button ion-button clear class="Forget" color="dark" (click)="forgetPassword(user)">Forget Password </button>
-              </div>
-               
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-       
- 
 
-     
-           
-
-  </div>
-  <!-- close register section -->
-
-  
-   
+  <!-- close register section --> 
   </div>           
-  
-  
-   <!-- <button ion-button (click)="message()">message</button> -->
    </ion-content>
+   <ion-footer  [hidden]="keyboard.isOpen()" >
+     <div class="register" >
+      <button ion-button clear color="light"  class="reg"  (click)="register()">Don't have account?</button>
+      <button ion-button clear  color="light" class="Forget" (click)="forgetPassword(user)">Forget Password</button>
+  </div>
+   </ion-footer>

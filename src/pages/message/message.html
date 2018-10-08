@@ -1,47 +1,43 @@
 
 
+ <ion-header>
+  
+  <ion-navbar color="b" >
+    <ion-title text-center>
+        {{categoryChosen}}
+    </ion-title>
+  </ion-navbar>
+  </ion-header>
 
-<ion-content padding class="background">
-  <div class="body">
-    <div>
-      <button ion-button clear icon-only large color="light"(click)="back()">
-        <ion-icon name="arrow-dropleft-circle"></ion-icon>
-      </button>
-        <h1>Get People & Days Worth Celebrating.</h1>
-    </div>
+
+<ion-content class="background">
+  <div padding class="body" >
+    <div class="flex">
+     <h1 text-center> <b> Get People & {{categoryChosen}} Worth Celebrating</b></h1>
+ </div>
     <div class="top">
-        <ion-list >
-            <ion-item class="item">
-              <ion-label>Send to</ion-label>
-              <ion-select [(ngModel)]="sendto">
-                <ion-option>Friend</ion-option>
-                <ion-option>Family</ion-option>
-                <ion-option>Lover</ion-option>
-                <ion-option>Other</ion-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
+          <ion-item>
+          
+            <ion-input placeholder="Name" type="text" [(ngModel)]="name"></ion-input>
+          </ion-item>
+        
          
-       <ion-item>
-        <ion-label>Start Time</ion-label>
-        <ion-datetime displayFormat="h:mm A" pickerFormat="hh:mm A"  [(ngModel)]="time"></ion-datetime>
+       <ion-item class="item">
+        <ion-datetime placeholder="Time" displayFormat="h:mm A" pickerFormat="HH:mm A"  [(ngModel)]="time"></ion-datetime>
         </ion-item>
 
-        <ion-item>
-            <ion-label>Start Date</ion-label>
-            <ion-datetime displayFormat="DDD MMM YYYY"  [(ngModel)]="date"></ion-datetime>
+        <ion-item class="item">
+            <ion-datetime placeholder="Date" displayFormat="DD MMM YYYY"  [(ngModel)]="myDate" required="required" ></ion-datetime>
             </ion-item>
 
-  
     </div>
-    <div class="buttons">
-        <button ion-button block round (click)="message()">Message</button>
+    <div class="buttons"  text-center>
+        <button ion-button  class="btn" color="b" round block (click)="chooseDate()">Choose message Type</button>
         <br>
        
     </div>
   
   
-
       
 
   </div>

@@ -7,6 +7,7 @@ import {HomePage} from '../../pages/home/home'
 
 import { AlertController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { LoginPage } from '../login/login';
 declare var firebase
 
 /**
@@ -37,12 +38,12 @@ export class RegisterPage {
     console.log(user.name);
     
   
-    if(this.user.email !=null  && this.user.password  !=null  && this.user.name !=null ){
+    if(this.user.email !=null  && this.user.password  !=null  ){
     this.db.register(user.email ,user.password, user.name).then(()=>{
       const toast = this.toastCtrl.create({
         message: 'Successfully Registered',
         duration: 3000,
-        position: 'middle'
+        position: 'end'
       });
       toast.present();
       this.navCtrl.setRoot(TabsPage);
@@ -73,9 +74,9 @@ export class RegisterPage {
   google(){
   this.db.SignWithGoogle()
 
-
-
-    
+  }
+  LoginPage(){
+    this.navCtrl.push(LoginPage)
   }
 
 }

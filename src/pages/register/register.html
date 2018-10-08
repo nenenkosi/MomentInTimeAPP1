@@ -1,9 +1,4 @@
-<ion-content padding class="ion-content" >
-
-
-
-  
-
+<ion-content padding class="background" >
 
   <div class="main" > 
     <!-- app logo -->
@@ -16,23 +11,24 @@
         <!-- start inputs section -->
         <div class="inputs">
             <ion-item class="ion-item"  >
-              <ion-label ><ion-icon color="primary" ios="ios-contact" md="md-contact"></ion-icon></ion-label>
+              <ion-label ><ion-icon color="light" ios="ios-contact" md="md-contact"></ion-icon></ion-label>
               <ion-input type="userame" value="" placeholder=" Username"[(ngModel)]="user.name"></ion-input>
             </ion-item>
             
             <ion-item  class="ion-item">
-              <ion-label ><ion-icon  color="primary" name="mail"></ion-icon></ion-label>
+              <ion-label ><ion-icon  color="light" name="mail"></ion-icon></ion-label>
               <ion-input type="email" value="" placeholder="Email" [(ngModel)]="user.email"></ion-input>
             </ion-item>
             
             <ion-item  class="ion-item" >
-              <ion-label><ion-icon color="primary"  name="lock"></ion-icon></ion-label>
+              <ion-label><ion-icon color="light"  name="lock"></ion-icon></ion-label>
               <ion-input type="password" placeholder="Password"  [(ngModel)]="user.password"></ion-input>
             </ion-item>
 
           
           <div class="button" >
-            <button  ion-button round color="blue" (click)="Register(user)" full>Register</button>
+            <button  ion-button round block outline color="light" (click)="Register(user)">Register</button>
+            <button block ion-button round class="Login"  color="light" (click)="LoginPage()"> &nbsp; Sign in</button>
           </div>
              </div>
                <!-- close inputs section  -->

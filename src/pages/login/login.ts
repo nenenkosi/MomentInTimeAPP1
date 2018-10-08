@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {user} from '../model/user'
+import { IonicPage, NavController, NavParams,Platform,App,LoadingController, Keyboard } from 'ionic-angular';
+import {user} from '../model/user';
 import {DatabaseProvider} from '../../providers/database/database' ;
 import { RegisterPage } from '../register/register';
 import { AlertController } from 'ionic-angular';
@@ -9,6 +9,7 @@ import { TabsPage } from '../tabs/tabs';
 //import { THIS_EXPR } from '../../../node_modules/@angular/compiler/src/output/output_ast';
 //import {HomePage} from '../home/home';
 import { MessagePage } from '../message/message';
+
 declare var firebase
 /**
  * Generated class for the LoginPage page.
@@ -23,50 +24,61 @@ declare var firebase
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  
 
   user = {} as user ;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , private db:DatabaseProvider ,public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams , private keyboard: Keyboard, private db:DatabaseProvider ,public alertCtrl: AlertController,public loadingCtrl: LoadingController) {
+
   }
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
+  presentLoading() {
+    
+  }
 
   Login(user:user){
 
-    //alert("clicked")
-
-   // var users = firebase.auth().currentUser.uid;
-
+    
+   
     if(user.email !=undefined && user.password !=undefined){
       this.db.login(user.email ,user.password).then(()=>{
-        
-        
-
+        var users= firebase.auth().currentUser;
+        console.log(users.uid);
+        (users)
+        firebase.database().ref("user/"+users.uid).set({
+          name:name
+        })
+        const loader = this.loadingCtrl.create({
+          content: "Logging in please wait...",
+          duration: 3000
+        });
+        loader.present();
         this.navCtrl.setRoot(TabsPage);
        
       } ,(error)=>{
         const alert = this.alertCtrl.create({
-          title: 'CONFIRMATION',
+          title: 'Error!',
           subTitle:  error,
           buttons: ['OK']
         });
-       
         alert.present();
+       
+      
   
       })
     }else{
       const alert = this.alertCtrl.create({
-        title: 'Confirmarion',
+        title: 'Warning!',
         subTitle: 'Please enter all details',
         buttons: ['OK']
       });
       alert.present();
+
     }
-   
-
-
   }
 
   forgetPassword(user:user){
@@ -107,7 +119,6 @@ export class LoginPage {
   }
 
   loginwithGooogle(){
-    alert("ggg")
     this.db.SignWithGoogle();
   }
 

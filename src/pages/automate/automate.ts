@@ -5,6 +5,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 import { SMS } from '@ionic-native/sms';
 import { Contacts } from '@ionic-native/contacts';
 import * as moment from 'moment';
+import { AboutPage } from '../about/about';
+import { DatabaseProvider } from '../../providers/database/database';
 /**
  * Generated class for the AutomatePage page.
  *
@@ -19,12 +21,20 @@ import * as moment from 'moment';
 })
 export class AutomatePage {
   phoneNumber ;
-  name ;
+ // name ;
   peronalisedMsg
   //sms ;
   graduation = this.navParams.get("graduation")
   message ;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController,public actionSheetCtrl: ActionSheetController, private localNotifications: LocalNotifications,private sms:SMS, private contacts: Contacts ) {
+
+  date = new Date() ;
+  countDown = this.navParams.get("countDown")
+
+  chosenDate =this.navParams.get("chosenDate");
+  chosenTime =this.navParams.get("chosenTime");
+  name = this.navParams.get("name");
+  categoryChosen = this.navParams.get("categoryChosen") ;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController,public actionSheetCtrl: ActionSheetController, private localNotifications: LocalNotifications,private sms:SMS, private contacts: Contacts, private db:DatabaseProvider ) {
   }
 
   ionViewDidLoad() {
@@ -46,33 +56,55 @@ export class AutomatePage {
   }
 
 
-  autoMessagessssss(){
+  autoMessagessssss(message){
 
+   let date = moment(this.chosenDate + " " + this.chosenTime).format('MMMM DD YYYY, h:mm:ss a');
+   
+     console.log(date);
+     alert(message);
+    
+
+
+ this.localNotifications.schedule({
+     text: this.chosenDate+ this.name,
+     trigger: {at: new Date(new Date(date) )} ,
+ })
   
-      const actionSheet = this.actionSheetCtrl.create({
-        title: 'Modify your album',
-        buttons: [
-          {
-            text: 'SMS',
-            role: 'destructive',
-            handler: () => {
-              this.contactss();
-            }
-          },{
-            text: 'Archive',
-            handler: () => {
-              console.log('Archive clicked');
-            }
-          },{
-            text: 'Cancel',
-            role: 'cancel',
-            handler: () => {
-              console.log('Cancel clicked');
-            }
-          }
-        ]
-      });
-   actionSheet.present();
+    this.db.saveSentMessages(this.name ,message, this.chosenDate).then(()=>{}, (error)=>{
+      
+    }) ;
+   this.navCtrl.push(AboutPage,{automessage:message, countDown:this.countDown} )
+
+
+
+
+  //   alert(message);
+  //     const actionSheet = this.actionSheetCtrl.create({
+  //       title: 'Modify your album',
+  //       buttons: [
+  //         {
+  //           text: 'SMS',
+  //           role: 'destructive',
+  //           handler: () => {
+  //             console.log(this.message);
+
+  //             this.contactss();
+  //           }
+  //         },{
+  //           text: 'Archive',
+  //           handler: () => {
+  //             console.log('Archive clicked');
+  //           }
+  //         },{
+  //           text: 'Cancel',
+  //           role: 'cancel',
+  //           handler: () => {
+  //             console.log('Cancel clicked');
+  //           }
+  //         }
+  //       ]
+  //     });
+  //  actionSheet.present();
       
     }
     showConfirm() {
@@ -106,6 +138,8 @@ export class AutomatePage {
       confirm.present();
       
     }
+
+
   
 
 }

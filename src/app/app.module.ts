@@ -24,6 +24,14 @@ import { SMS } from '@ionic-native/sms';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { EventPage } from '../pages/event/event';
+import { PopoverPage } from '../pages/popover/popover';
+import { FavouriteMessagesPage } from '../pages/favourite-messages/favourite-messages';
+import { SwingModule } from 'angular2-swing';
+
+import { SwipeCardsModule } from 'ng2-swipe-cards';
+import { ViewPage } from '../pages/view/view';
+
 
 var config = {
   apiKey: "AIzaSyD-60vJrUA-k0qFjOyc-2quuULN2t9DKAc",
@@ -40,10 +48,10 @@ var config = {
     AboutPage,
     ContactPage,
     HomePage, AdminPage ,
-    TabsPage , LoginPage , RegisterPage,PersonalizedPage,AutomatePage,MessagePage
+    TabsPage , LoginPage , RegisterPage,PersonalizedPage,AutomatePage,MessagePage,EventPage,PopoverPage,FavouriteMessagesPage,ViewPage
   ],
   imports: [
-    BrowserModule,HttpClientModule ,
+    BrowserModule,HttpClientModule , SwingModule,SwipeCardsModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule
@@ -54,11 +62,11 @@ var config = {
     AboutPage,
     ContactPage,
     HomePage, AdminPage , 
-    TabsPage , RegisterPage , LoginPage,PersonalizedPage,AutomatePage,MessagePage
+    TabsPage , RegisterPage , LoginPage,PersonalizedPage,AutomatePage,MessagePage,EventPage,PopoverPage,FavouriteMessagesPage,ViewPage
   ],
   providers: [
     StatusBar,
-    SplashScreen, DatabaseProvider , SMS , SocialSharing ,Contacts,LocalNotifications ,
+    SplashScreen, DatabaseProvider , SMS , SocialSharing ,Contacts,LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   
   ]

@@ -1,94 +1,62 @@
-<ion-content padding class="no-scroll" >
-        <div class="body" ion-fixed >
-          <ion-grid no-padding fixed-content >
-              <ion-row>
-                  <ion-col  >
-                      <div>
-                            <ion-card style="background:#87e0ff" class="card" (click)="birthday()">
-                                    <ion-card-content> 
-                                        <img src="../../assets/imgs/icons8_Wedding_Cake_96px_1.png" alt="" >
-                                      <ion-card-title>
-                                          <h3>Birthday</h3>
-                                         
-                                        </ion-card-title>
-                                    </ion-card-content>
-                                  </ion-card>
-                            
-                      </div>
-                  </ion-col>
-                  <ion-col>
-                    <div>
-                            <ion-card class="card" style="background:#87e0ff"  (click)="graduation()">
-                                    <ion-card-content> 
-                                       <img src="../../assets/imgs/icons8_Graduation_Cap_96px.png" alt="">
-                                        <ion-card-title>
-                                            <h3>Graduation</h3>
-                                            
-                                          </ion-card-title>
-                                      </ion-card-content>
-                                </ion-card>
-                    </div>
-                </ion-col>
-              </ion-row>
+<ion-header>
+  
+        <ion-navbar color="b" >
+            <ion-buttons left>
+                <button ion-button  color="royal">
+                  <ion-icon name=""></ion-icon>
+                </button>
+              </ion-buttons>
+          <ion-title text-center>
+              Home
+          </ion-title>
+          <ion-buttons end>
+              <button ion-button  color="royal" (click)="presentPopover($event)">
+                <ion-icon name="more"></ion-icon>
+              </button>
+            </ion-buttons>
+        </ion-navbar>
+      </ion-header>
+
+<ion-content  class="backgroud" padding >
+  <div class="card-container" *ngIf="ready">
+    <sc-card  *ngFor="let attendant of attendants"
+[orientation]="cardDirection" [tinder-card]="cardOverlay"[callDestroy]="attendant.destroyEvent" [callLike]="attendant.likeEvent" (onLike)="onCardInteract($event)">
+
+<div class="user_img" [style.background-image]="attendant.asBg"></div>
+    </sc-card>
+    
+</div>
+
+
+<ion-grid>
+<ion-row>
+  <ion-col>
+    <ion-fab right bottom>
+      <button ion-fab class="fabs" color="light"><ion-icon color="secondary" name="md-heart" (click)="getMessage()" ></ion-icon></button>
+    </ion-fab>
+  </ion-col>
+  <ion-col>
+    <ion-fab center bottom >
+      <button ion-fab mini color="light" (click)="shareVia()"><ion-icon color="primary" name="share"></ion-icon></button>
+     </ion-fab>
+  </ion-col>
+  <ion-col>
+    <ion-fab left bottom >
+      <button ion-fab  class="fabs" color="light"><ion-icon color="danger" name="md-close" (click)="getMessage()" ></ion-icon></button>
+    </ion-fab> 
+  </ion-col>
+</ion-row>
+</ion-grid>
         
-              <ion-row>
-                  <ion-col col >
-                      <div>
-                            <ion-card class="card" style="background:#53c7f0" (click)="babyShower()">
-                                    <ion-card-content > 
-                                        <img src="../../assets/imgs/icons8_Mother_96px.png" alt="">
-                                        <ion-card-title>
-                                            <h3>Baby Shower</h3>
-                                            
-                                          </ion-card-title>
-                                      </ion-card-content>
-                                    </ion-card>
-                              
-                      </div>
-                  </ion-col>
-                  <ion-col>
-                      <div>
-                            <ion-card class="card" style="background:#53c7f0" (click)="newJob()">
-                                    <ion-card-content> 
-                                        <img src="../../assets/imgs/icons8_Briefcase_96px.png" alt="">
-                                        <ion-card-title>
-                                            <h3>New Job/career</h3>
-                                          </ion-card-title>
-                                      </ion-card-content>
-                                </ion-card>
-                      </div>
-                  </ion-col>
-              </ion-row>
-              
-              <ion-row>
-                  <ion-col>
-                      <div>
-                            <ion-card class="card" style="background:#1d97c1" (click)="anniversary()" >
-                                    
-                                        <img src="../../assets/imgs/icons8_Wedding_Gift_60px.png" alt="">
-                                        <ion-card-title>
-                                            <h3>Anniversary</h3>
-                                            
-                                          </ion-card-title>
-                                    
-                                </ion-card>
-                      </div>
-                  </ion-col>
-                  <ion-col>
-                      <div>
-                            <ion-card class="card" style="background:#1d97c1"  (click)="wedding()">
-                                    <ion-card-content> 
-                                       <img src="../../assets/imgs/icons8_Heart_With_Arrow_96px.png" alt="">
-                                        <ion-card-title>
-                                            <h3>Wedding</h3>
-                                            
-                                          </ion-card-title>
-                                      </ion-card-content>
-                                </ion-card>
-                      </div>
-                  </ion-col>
-              </ion-row>
-          </ion-grid>
-        </div>
-        
+  <!-- <ion-fab right bottom>
+  <button ion-fab class="fabs" color="light"><ion-icon color="secondary" name="md-heart" (click)="getMessage()" ></ion-icon></button>
+</ion-fab>
+<ion-fab center bottom >
+  <button ion-fab mini color="light" (click)="shareVia()"><ion-icon color="primary" name="share"></ion-icon></button>
+ </ion-fab>
+<ion-fab left bottom >
+  <button ion-fab  class="fabs" color="light"><ion-icon color="danger" name="md-close" (click)="getMessage()" ></ion-icon></button>
+</ion-fab>  -->
+
+         
       </ion-content>

@@ -1,3 +1,47 @@
 page-about {
+    .background{
+        background-color: rgb(240, 240, 240);
+        // border-radius: 
+    }
+    .date{
+        text-align: center;
+        position: relative;
+    
+    }
+ 
+    .heading{
+        position: relative;
+        top: -2px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.2em;
+    }
+    ion-row {
+        position: relative;
+        bottom: -10px;
+    }
+    .text{
+        position: relative;
+        top: 10px;
+
+    }
+    .text {
+ 
+    }
+    .item{
+      border-radius: 15px;
+  } 
+  
+
+.item-md  {
+    margin: 0 0 2px;
+    overflow: inherit;
+    font-size: 1.4rem;
+    line-height: normal;
+    text-overflow: inherit;
+    // color: #666;
+}
+    
+   
 
 }

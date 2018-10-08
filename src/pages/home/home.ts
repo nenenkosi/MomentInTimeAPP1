@@ -1,79 +1,187 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
+import { NavController,PopoverController } from 'ionic-angular';
 import {DatabaseProvider} from '../../providers/database/database' ;
 import { AutomatePage } from '../automate/automate';
 import { MessagePage } from '../message/message';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { ActionSheetController } from 'ionic-angular';
+import { PopoverPage } from '../popover/popover';
+import { Slides } from 'ionic-angular';
+import {
+ StackConfig,Stack,Card,ThrowEvent,DragEvent,SwingStackComponent,SwingCardComponent} from 'angular2-swing';
+
+
+ import {EventEmitter } from '@angular/core';
+
+import { DomSanitizer } from '@angular/platform-browser';
+import { LoginPage } from '../login/login';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+
+ selector: 'page-home',
+ templateUrl: 'home.html'
 })
 export class HomePage {
+ mesaagesArray =[] ;
+ msgz =[]
+ indx =0
+ @ViewChild('myswing1') swingStack: SwingStackComponent;
+ @ViewChildren('mycards1') swingCards: QueryList<SwingCardComponent>;
 
-  constructor(public navCtrl: NavController , private db:DatabaseProvider) {
+ cards: Array<any>;
+ stackConfig: StackConfig;
+ recentCard: string = '';
+ currentIndex :number = 0;
+ count =0 ;
 
-  }
+ liked = 0
+ shareMsg
 
-
-  graduation(){
-this.db.GraduationMessages().then((data:any)=>{
-
-  console.log(data);
-  this.navCtrl.push(MessagePage  , {graduationMsg:data} )
-  
-} , (error)=>{})
-
-  }
+ @ViewChild(Slides) slides: Slides;
 
 
-  wedding(){
-    this.db.weddingMessage().then((data:any)=>{
 
-      console.log(data);
-      this.navCtrl.push(MessagePage  , {graduationMsg:data} )
-      
-    } , (error)=>{})
-    
+ ready = false;
+ attendants = [];
+ cardDirection = "xy";
+ cardOverlay: any = {
+     like: {
+         backgroundColor: '#28e93b'
+     },
+     dislike: {
+         backgroundColor: '#e92828'
+     }
+ };
 
-  }
-  anniversary(){
-    this.db.anniversaryMessage().then((data:any)=>{
 
-      console.log(data);
-      this.navCtrl.push(MessagePage  , {graduationMsg:data} )
-      
-    } , (error)=>{})
-    
+ images= [];
 
-  }
-  newJob(){
-    this.db.newJobMessage().then((data:any)=>{
 
-      console.log(data);
-      this.navCtrl.push(MessagePage  , {graduationMsg:data} )
-      
-    } , (error)=>{})
-    
 
-  }
-  babyShower(){
-    this.db.babyShowerMessages().then((data:any)=>{
+ constructor(public navCtrl: NavController , private db:DatabaseProvider, private socialSharing: SocialSharing, public actionSheetCtrl: ActionSheetController,public popoverCtrl: PopoverController , private sanitizer: DomSanitizer) {
+   this.db.getMessages().then((data:any)=>{
+     console.log(data);
 
-      console.log(data);
-      this.navCtrl.push(MessagePage  , {graduationMsg:data} )
-      
-    } , (error)=>{})
-    
+     this.images=data
 
-  }
-  birthday(){
-    this.db.birthdayMessages().then((data:any)=>{
+     console.log(this.images);
 
-      console.log(data);
-      this.navCtrl.push(MessagePage  , {graduationMsg:data} )
-      
-    } , (error)=>{})
-    
 
-  }
+     for (let i = 0; i < this.images.length; i++) {
+       this.attendants.push({
+           id: i + 1,
+           likeEvent: new EventEmitter(),
+           destroyEvent: new EventEmitter(),
+          asBg: sanitizer.bypassSecurityTrustStyle('url('+this.images[i].message+')')
+
+
+       });
+
+   }
+
+   this.ready = true;
+
+
+
+     //this.msgz=this.mesaagesArray[0].message;
+
+   } , (error)=>{})
+
+
+
+
+
+
+}
+
+
+onCardInteract(event) {
+ console.log(event);
+
+
+if(event.like == false){
+ this.liked =this.liked+1 ;
+}
+
+
+ if(event.like == true){
+   console.log(this.liked);
+
+
+
+   this.msgz =this.images[this.liked].message
+   this.liked =this.liked+1 ;
+   console.log("liked");
+   console.log(this.msgz);
+   console.log(this.liked);
+
+   this.db.likedMessage(this.msgz).then(()=>{})
+
+
+
+
+ }
+
+ else{
+   //console.log(event);
+   console.log("disliked");
+
+
+
+ }
+}
+
+
+
+presentPopover(myEvent) {
+ let popover = this.popoverCtrl.create(PopoverPage);
+ popover.present({
+   ev: myEvent
+ });
+}
+
+
+
+shareVia(){
+  const actionSheet = this.actionSheetCtrl.create({
+    title: 'Share via',
+    buttons: [
+      {
+        text: 'Whatsapp',
+        role: 'destructive',
+        handler: () => {
+          //console.log(this.indx);
+ 
+          this.shareMsg=this.images[this.liked].message
+          console.log(this.shareMsg);
+ 
+          this.db.sendviaWhatsApp(this.shareMsg, this.shareMsg)
+          console.log('Destructive clicked');
+          console.log(this.shareMsg);
+          console.log(this.liked);
+        }
+      },{
+        text: 'Facebook',
+        handler: () => {
+          console.log('Archive clicked');
+          this.shareMsg=this.images[this.liked].message
+          this.db.sendviaFacebook(this.shareMsg, this.shareMsg);
+        }
+      },{
+        text: 'Email',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+          this.shareMsg=this.images[this.liked].message
+          this.db.sendViaemail(this.shareMsg)
+        }
+      }
+    ]
+  });
+  actionSheet.present();
+ }
+ 
+
+
+
 }
