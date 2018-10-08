@@ -61,7 +61,7 @@ export class AutomatePage {
    let date = moment(this.chosenDate + " " + this.chosenTime).format('MMMM DD YYYY, h:mm:ss a');
    
      console.log(date);
-     alert(message);
+    
     
 
 
