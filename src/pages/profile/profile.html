@@ -1,0 +1,84 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="background">
+    <h1 align="center"> {{name}}</h1>
+  
+    <br>
+    <ion-avatar >
+          <img src="../../assets/HAIR4.jpg" class="Avatar"> 
+          <br>
+      <ion-note class="ion-note" >
+        email
+      </ion-note> 
+    </ion-avatar>
+    <ion-fab left bottom >
+        <button ion-fab  mini (click)="takeApic()"><ion-icon name="md-camera"></ion-icon></button>
+    </ion-fab>
+      
+    
+        
+   
+ 
+  <ion-list>
+    <ion-item><div padding>
+       
+        <ion-segment [(ngModel)]="pet">
+          <ion-segment-button value="Favourites">
+          FAVOURITE
+          </ion-segment-button>
+          <ion-segment-button value="puppies">
+            Puppies
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      
+      <div [ngSwitch]="pet"   >
+        <div  *ngFor="let a of  favouriteArray">
+        <ion-list *ngSwitchCase="'Favourites'">
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="{{a.message}}">
+            </ion-thumbnail>
+            
+          </ion-item>
+        
+        </ion-list>
+
+
+
+      </div>
+        <ion-list *ngSwitchCase="'puppies'">
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="img/thumbnail-kitten-1.jpg">
+            </ion-thumbnail>
+            <h2>Luna</h2>
+          </ion-item>
+       
+     
+          
+          
+     
+        </ion-list>
+      </div>
+     
+     
+      <br>
+
+     
+        
+        
+    </ion-item>
+  </ion-list>
+</ion-content>

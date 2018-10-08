@@ -53,11 +53,15 @@ export class DatabaseProvider {
   register(email , password , name){
     var users= firebase.auth().currentUser;
 
+  
+    
     return new Promise((resolve, reject)=>{
       firebase.auth().createUserWithEmailAndPassword(email , password) .then(()=>{
-        // firebase.database().ref("user/"+ users.uid).set({
-        //   name:name
-        // })
+        firebase.database().ref("user/"+ users.uid).set({
+          name:name,
+          email:email,
+          
+        })
         resolve();
       } , (error)=>{
         reject(error);
@@ -65,11 +69,14 @@ export class DatabaseProvider {
  
  
  })
- 
+ //console.log(email);
  }
 
  login(email , password){
-
+  // var users= firebase.auth().currentUser.email;
+  // console.log(users);
+ 
+  
   //firebase.auth().signInWithEmail()
   return new Promise((resolve, reject)=>{
     firebase.auth().signInWithEmailAndPassword(email , password).then(()=>{
@@ -108,8 +115,8 @@ forgetPassword(email){
 SignWithGoogle(){
   var users= firebase.auth().currentUser;
   this.provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-
-   return firebase.auth().signInWithRedirect(this.provider).then(function(result) {
+//firebase.auth().languageCode = 'pt';
+   return firebase.auth().signInWithPopup(this.provider).then((result)=> {
     // This gives you a Google Access Token. You can use it to access the Google API.
    
 
@@ -119,18 +126,20 @@ SignWithGoogle(){
       var res =result.user.displayName.split(" ")
       console.log(user);
 
-      firebase.database().ref("user/"+ users.uid).set({
-        email:user.email ,
-        username:user.displayName  ,
-        name:{
-          first:res[0],
-          middle:res[1] ,
-          last:res[2]
-        }
-      })
+      
+
+      // firebase.database().ref("user/"+ users.uid).set({
+      //   email:user.email ,
+      //   username:user.displayName  ,
+      //   name:{
+      //     first:res[0],
+      //     middle:res[1] ,
+      //     last:res[2]
+      //   }
+      // })
     
    
-    
+    //this.checkstate();
     
   }).catch(function(error) {
     // Handle Errors here.
@@ -387,6 +396,10 @@ saveSentMessages(name,message , date){
 })
 
 }
+
+
+
+
 
 
 likedMessage(message){

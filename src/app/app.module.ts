@@ -31,6 +31,8 @@ import { SwingModule } from 'angular2-swing';
 
 import { SwipeCardsModule } from 'ng2-swipe-cards';
 import { ViewPage } from '../pages/view/view';
+import { ProfilePage } from '../pages/profile/profile';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 
 var config = {
@@ -48,7 +50,7 @@ var config = {
     AboutPage,
     ContactPage,
     HomePage, AdminPage ,
-    TabsPage , LoginPage , RegisterPage,PersonalizedPage,AutomatePage,MessagePage,EventPage,PopoverPage,FavouriteMessagesPage,ViewPage
+    TabsPage , LoginPage , RegisterPage,PersonalizedPage,AutomatePage,MessagePage,EventPage,PopoverPage,FavouriteMessagesPage,ViewPage,ProfilePage
   ],
   imports: [
     BrowserModule,HttpClientModule , SwingModule,SwipeCardsModule,
@@ -62,11 +64,11 @@ var config = {
     AboutPage,
     ContactPage,
     HomePage, AdminPage , 
-    TabsPage , RegisterPage , LoginPage,PersonalizedPage,AutomatePage,MessagePage,EventPage,PopoverPage,FavouriteMessagesPage,ViewPage
+    TabsPage , RegisterPage , LoginPage,PersonalizedPage,AutomatePage,MessagePage,EventPage,PopoverPage,FavouriteMessagesPage,ViewPage, ProfilePage
   ],
   providers: [
     StatusBar,
-    SplashScreen, DatabaseProvider , SMS , SocialSharing ,Contacts,LocalNotifications,
+    SplashScreen, DatabaseProvider , SMS , SocialSharing ,Contacts,LocalNotifications,Camera ,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   
   ]

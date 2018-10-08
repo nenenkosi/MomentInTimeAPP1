@@ -20,6 +20,7 @@
     "@angular/http": "5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
+    "@ionic-native/camera": "^4.15.0",
     "@ionic-native/contacts": "^4.12.2",
     "@ionic-native/core": "~4.12.0",
     "@ionic-native/local-notifications": "^4.12.2",
@@ -32,6 +33,7 @@
     "angularfire2": "^5.0.1",
     "cordova-android": "7.0.0",
     "cordova-plugin-badge": "^0.8.7",
+    "cordova-plugin-camera": "^4.0.3",
     "cordova-plugin-contacts": "^3.0.1",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.1.2",
@@ -70,7 +72,8 @@
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-local-notification": {}
+      "cordova-plugin-local-notification": {},
+      "cordova-plugin-camera": {}
     },
     "platforms": [
       "android"

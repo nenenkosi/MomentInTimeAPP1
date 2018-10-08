@@ -43882,6 +43882,29 @@ page-popover .custom-popover .popover-content {
   width: 10%;
 }
 
+page-profile img {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border-radius: 60%;
+  overflow: hidden;
+}
+
+page-profile .header {
+  text-align: center;
+}
+
+page-profile .ion-note {
+  text-align: center;
+  display: block;
+}
+
+page-profile .fab-md {
+  position: relative;
+  top: -370px;
+  left: 300%;
+}
+
 page-register .background {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(249, 178, 183, 0.877)), to(rgba(107, 43, 93, 0.877))), url("../../assets/imgs/d0eaed6190f04fec433b0aeb94be7ab1.jpg");
   background-image: linear-gradient(to bottom, rgba(249, 178, 183, 0.877), rgba(107, 43, 93, 0.877)), url("../../assets/imgs/d0eaed6190f04fec433b0aeb94be7ab1.jpg");

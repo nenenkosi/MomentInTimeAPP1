@@ -23,6 +23,8 @@ export class MyApp {
    db.checkstate().then((data:any)=>{
 
       if (data ==1){
+       
+        
         this.rootPage = TabsPage;
      
       }

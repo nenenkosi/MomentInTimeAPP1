@@ -60,8 +60,9 @@ export class AutomatePage {
 
    let date = moment(this.chosenDate + " " + this.chosenTime).format('MMMM DD YYYY, h:mm:ss a');
    
-     console.log(date);
+     
     
+    console.log(date);
     
 
 
@@ -78,33 +79,7 @@ export class AutomatePage {
 
 
 
-  //   alert(message);
-  //     const actionSheet = this.actionSheetCtrl.create({
-  //       title: 'Modify your album',
-  //       buttons: [
-  //         {
-  //           text: 'SMS',
-  //           role: 'destructive',
-  //           handler: () => {
-  //             console.log(this.message);
-
-  //             this.contactss();
-  //           }
-  //         },{
-  //           text: 'Archive',
-  //           handler: () => {
-  //             console.log('Archive clicked');
-  //           }
-  //         },{
-  //           text: 'Cancel',
-  //           role: 'cancel',
-  //           handler: () => {
-  //             console.log('Cancel clicked');
-  //           }
-  //         }
-  //       ]
-  //     });
-  //  actionSheet.present();
+  
       
     }
     showConfirm() {

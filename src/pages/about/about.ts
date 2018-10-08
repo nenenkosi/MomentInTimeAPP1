@@ -29,6 +29,7 @@ export class AboutPage {
   automessage=this.navParams.get('automessage');
   date = this.navParams.get("date");
   dates = new Date() ;
+  chosenCategory = this.navParams.get("chosenCategory");
 
   
 
@@ -38,7 +39,9 @@ export class AboutPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,private contacts: Contacts, public alertCtrl: AlertController,public actionSheetCtrl: ActionSheetController, private localNotifications: LocalNotifications,private sms:SMS ,private socialSharing:SocialSharing, private db:DatabaseProvider) {
     console.log(this.icon);
     
-    console.log(this.automessage);
+    //console.log(this.automessage);
+    console.log(this.chosenCategory);
+    
     
   this.sentMessages=[];
   
@@ -79,7 +82,26 @@ export class AboutPage {
 
 
 
+
+
   }
+
+
+
+  
+ionViewDidLoad() {
+  console.log('ionViewDidLoad PersonalizedPage');
+  
+  
+  
+  console.log(this.chosenCategory);
+  
+  
+  
+  
+  
+  
+}
 
 
   Delete(a){
@@ -223,7 +245,7 @@ export class AboutPage {
  
  
  
-        // alert(a)
+        
             this.sms.send(this.phoneNumber, a).then(()=>{
                           alert('success')
                           this.icon="checkmark-circle";

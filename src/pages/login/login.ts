@@ -42,13 +42,16 @@ export class LoginPage {
 
   Login(user:user){
 
+    // var users= firebase.auth().currentUser.email;
+    console.log(user.email);
+    
     
    
     if(user.email !=undefined && user.password !=undefined){
       this.db.login(user.email ,user.password).then(()=>{
         var users= firebase.auth().currentUser;
-        console.log(users.uid);
-        (users)
+        console.log(users.email);
+        
         firebase.database().ref("user/"+users.uid).set({
           name:name
         })
@@ -119,7 +122,14 @@ export class LoginPage {
   }
 
   loginwithGooogle(){
-    this.db.SignWithGoogle();
+    this.db.SignWithGoogle().then(()=>{
+      console.log("in");
+      
+      this.navCtrl.push(TabsPage)
+
+    } , (error)=>{
+
+    });
   }
 
   register(){
